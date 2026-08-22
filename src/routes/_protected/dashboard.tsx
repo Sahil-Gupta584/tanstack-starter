@@ -1,16 +1,5 @@
 import { createFileRoute, Link, useRouter } from '@tanstack/react-router'
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-  Chip,
-} from '@heroui/react'
+import { Card, Modal, Chip } from '@heroui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -23,231 +12,307 @@ import {
   RiAddLine,
   RiFileList3Line,
   RiEditLine,
-  RiBarChartBoxLine,
   RiDeleteBinLine,
+  RiEyeLine,
+  RiGiftLine,
+  RiFileCopyLine,
+  RiCheckLine,
 } from 'react-icons/ri'
 
 export const Route = createFileRoute('/_protected/dashboard')({
   component: DashboardPage,
 })
 
-const createFormSchema = z.object({
-  title: z.string().min(2, 'Title must be at least 2 characters'),
+const formSchema = z.object({
+  title: z.string().min(1, 'Title is required'),
   description: z.string().optional(),
 })
 
-type CreateFormInput = z.infer<typeof createFormSchema>
+type FormSchemaInput = z.infer<typeof formSchema>
 
 function DashboardPage() {
-  const { user } = Route.useRouteContext()
-  const router = useRouter()
   const queryClient = useQueryClient()
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-  const [serverError, setServerError] = useState<string | null>(null)
-
-  const name = user?.name ?? user?.email ?? 'there'
-
-  const { data: forms = [], isLoading } = useQuery(
-    orpc.forms.listUserForms.queryOptions(),
-  )
-
-  const createFormMutation = useMutation(
-    orpc.forms.createForm.mutationOptions({
-      onSuccess: (newForm) => {
-        queryClient.invalidateQueries(orpc.forms.listUserForms.queryOptions())
-        onClose()
-        router.navigate({ to: '/forms/$formId', params: { formId: newForm.id } })
-      },
-      onError: (err) => {
-        setServerError(err.message)
-      },
-    }),
-  )
-
-  const deleteFormMutation = useMutation(
-    orpc.forms.deleteForm.mutationOptions({
-      onSuccess: () => {
-        queryClient.invalidateQueries(orpc.forms.listUserForms.queryOptions())
-      },
-    }),
-  )
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
+  const [editingForm, setEditingForm] = useState<{
+    id: string
+    title: string
+    description: string | null
+  } | null>(null)
+  const [copiedId, setCopiedId] = useState<string | null>(null)
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
-  } = useForm<CreateFormInput>({
-    resolver: zodResolver(createFormSchema),
+    setValue,
+    formState: { errors },
+  } = useForm<FormSchemaInput>({
+    resolver: zodResolver(formSchema),
   })
 
-  const onSubmit = async (data: CreateFormInput) => {
-    setServerError(null)
-    await createFormMutation.mutateAsync({
-      title: data.title,
-      description: data.description,
-      preset: 'amazon',
-    })
+  const { data: forms = [], isLoading } = useQuery(
+    orpc.forms.listUserForms.queryOptions(),
+  )
+
+  const createMutation = useMutation(
+    orpc.forms.createForm.mutationOptions({
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: orpc.forms.listUserForms.key(),
+        })
+        handleCloseModal()
+      },
+    }),
+  )
+
+  const updateMutation = useMutation(
+    orpc.forms.createForm.mutationOptions({
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: orpc.forms.listUserForms.key(),
+        })
+        handleCloseModal()
+      },
+    }),
+  )
+
+  const deleteMutation = useMutation(
+    orpc.forms.createForm.mutationOptions({
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: orpc.forms.listUserForms.key(),
+        })
+      },
+    }),
+  )
+
+  const handleOpenCreate = () => {
+    setEditingForm(null)
+    reset({ title: '', description: '' })
+    setIsOpen(true)
+  }
+
+  const handleOpenEdit = (form: {
+    id: string
+    title: string
+    description: string | null
+  }) => {
+    setEditingForm(form)
+    setValue('title', form.title)
+    setValue('description', form.description ?? '')
+    setIsOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsOpen(false)
+    setEditingForm(null)
+    reset()
+  }
+
+  const onSubmit = (data: FormSchemaInput) => {
+    if (editingForm) {
+      updateMutation.mutate({
+        title: data.title,
+        description: data.description,
+      })
+    } else {
+      createMutation.mutate(data)
+    }
+  }
+
+  const handleCopyLink = (formId: string) => {
+    const url = `${window.location.origin}/offers/${formId}`
+    navigator.clipboard.writeText(url)
+    setCopiedId(formId)
+    setTimeout(() => setCopiedId(null), 2000)
   }
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-      {/* Header */}
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">
-            Good morning, {name.split(' ')[0]} 👋
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            Gift Forms
           </h1>
           <p className="mt-1 text-sm text-gray-500">
-            Create, manage, and view responses for your offer forms.
+            Create and manage your gift offer forms to collect claims.
           </p>
         </div>
         <Button
-          color="primary"
-          variant="solid"
+          variant="primary"
+          onClick={handleOpenCreate}
           startContent={<RiAddLine className="text-lg" />}
-          onPress={() => {
-            reset()
-            onOpen()
-          }}
         >
           Create Form
         </Button>
       </div>
 
-      {/* Forms List */}
       {isLoading ? (
-        <div className="py-12 text-center text-sm text-gray-500">Loading your forms...</div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((i) => (
+            <Card key={i} className="h-44 animate-pulse bg-gray-100 p-4">
+              <div className="h-6 w-1/2 rounded bg-gray-200" />
+            </Card>
+          ))}
+        </div>
       ) : forms.length === 0 ? (
-        <Card shadow="sm" className="bg-white p-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-600">
-            <RiFileList3Line className="text-2xl" />
-          </div>
-          <h3 className="mt-4 text-base font-semibold text-gray-900">No forms created yet</h3>
-          <p className="mt-1 text-sm text-gray-500">
-            Create an Amazon offer / lucky draw form and start collecting responses.
-          </p>
-          <div className="mt-6 flex justify-center">
+        <Card className="flex flex-col items-center justify-center p-12 text-center">
+          <Card.Content className="flex flex-col items-center">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 mb-4">
+              <RiGiftLine className="text-2xl" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900">
+              No forms yet
+            </h3>
+            <p className="mt-1 max-w-sm text-sm text-gray-500">
+              Get started by creating your first gift offer form to share with
+              your audience.
+            </p>
             <Button
-              color="primary"
-              variant="solid"
+              variant="primary"
+              className="mt-6"
+              onClick={handleOpenCreate}
               startContent={<RiAddLine className="text-lg" />}
-              onPress={() => {
-                reset()
-                onOpen()
-              }}
             >
-              Create Your First Form
+              Create Form
             </Button>
-          </div>
+          </Card.Content>
         </Card>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {forms.map((form: any) => (
-            <Card key={form.id} shadow="sm" className="bg-white hover:border-amber-400 transition">
-              <CardHeader className="flex items-center justify-between pb-2">
-                <div className="min-w-0 pr-2">
-                  <h3 className="truncate text-base font-bold text-gray-900">{form.title}</h3>
-                  <p className="truncate text-xs text-gray-500">
-                    {form.description || 'No description'}
-                  </p>
+            <Card
+              key={form.id}
+              className="flex flex-col justify-between p-5 hover:shadow-md transition"
+            >
+              <Card.Header className="flex-col items-start gap-1 p-0 pb-3">
+                <div className="flex w-full items-start justify-between">
+                  <Card.Title className="truncate text-base font-semibold text-gray-900">
+                    {form.title}
+                  </Card.Title>
+                  <Chip size="sm" color="accent" className="shrink-0">
+                    Active
+                  </Chip>
                 </div>
-                <Chip size="sm" color="warning" variant="flat" className="capitalize">
-                  {form.preset}
-                </Chip>
-              </CardHeader>
-              <CardBody className="pt-2">
-                <div className="mb-4 flex items-center justify-between border-t border-gray-100 pt-3 text-xs text-gray-500">
-                  <span>Submissions</span>
-                  <span className="font-bold text-gray-900">{form._count?.submissions ?? 0}</span>
+                {form.description && (
+                  <Card.Description className="line-clamp-2 text-xs text-gray-500">
+                    {form.description}
+                  </Card.Description>
+                )}
+              </Card.Header>
+
+              <Card.Content className="flex items-center justify-between border-t border-gray-100 px-0 pt-3 text-xs text-gray-500">
+                <span>0 gifts</span>
+                <span>0 responses</span>
+              </Card.Content>
+
+              <Card.Footer className="flex items-center justify-between border-t border-gray-100 px-0 pt-3">
+                <div className="flex items-center gap-1">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => router.navigate({ to: `/forms/${form.id}` })}
+                  >
+                    <RiEditLine className="text-sm" />
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() =>
+                      router.navigate({ to: `/forms/${form.id}/responses` })
+                    }
+                  >
+                    <RiFileList3Line className="text-sm" />
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => handleCopyLink(form.id)}
+                  >
+                    {copiedId === form.id ? (
+                      <RiCheckLine className="text-sm text-emerald-600" />
+                    ) : (
+                      <RiFileCopyLine className="text-sm" />
+                    )}
+                  </Button>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <Button
-                    as={Link}
-                    to="/forms/$formId"
+                <div className="flex items-center gap-1">
+                  <Link
+                    to="/offers/$formId"
                     params={{ formId: form.id }}
-                    size="sm"
-                    variant="bordered"
-                    className="flex-1"
-                    startContent={<RiEditLine />}
+                    target="_blank"
                   >
-                    Edit
-                  </Button>
-                  <Button
-                    as={Link}
-                    to="/forms/$formId/responses"
-                    params={{ formId: form.id }}
-                    size="sm"
-                    color="primary"
-                    variant="flat"
-                    className="flex-1"
-                    startContent={<RiBarChartBoxLine />}
-                  >
-                    Responses
-                  </Button>
+                    <Button size="sm" variant="secondary">
+                      <RiEyeLine className="text-sm" />
+                    </Button>
+                  </Link>
                   <Button
                     size="sm"
-                    color="danger"
-                    variant="light"
-                    isIconOnly
-                    isLoading={deleteFormMutation.isPending}
-                    onPress={() => {
-                      if (confirm('Are you sure you want to delete this form?')) {
-                        deleteFormMutation.mutate({ id: form.id })
-                      }
-                    }}
+                    variant="danger"
+                    onClick={() => deleteMutation.mutate({ title: form.title })}
+                    isLoading={deleteMutation.isPending}
                   >
-                    <RiDeleteBinLine />
+                    <RiDeleteBinLine className="text-sm" />
                   </Button>
                 </div>
-              </CardBody>
+              </Card.Footer>
             </Card>
           ))}
         </div>
       )}
 
-      {/* Create Form Modal */}
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="center">
-        <ModalContent>
-          {(onCloseModal) => (
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <ModalHeader className="flex flex-col gap-1">Create Amazon Lucky Draw Form</ModalHeader>
-              <ModalBody className="flex flex-col gap-4">
-                <Input
-                  label="Form Title"
-                  placeholder="e.g. Amazon Great Indian Festival Lucky Draw"
-                  isInvalid={!!errors.title}
-                  errorMessage={errors.title?.message}
-                  {...register('title')}
-                />
-                <Input
-                  label="Description (Optional)"
-                  placeholder="e.g. Win iPhone 15 Pro & Amazon Pay Balance"
-                  {...register('description')}
-                />
-                <div className="rounded-lg bg-amber-50 p-3 text-xs text-amber-800">
-                  <strong>Preset: Amazon Offer Form</strong>
-                  <br />
-                  Includes Amazon branding, lucky draw wheel styling, and customizable inputs.
+      <Modal isOpen={isOpen} onOpenChange={setIsOpen}>
+        <Modal.Backdrop />
+        <Modal.Container>
+          <Modal.Dialog className="max-w-md w-full p-6">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Modal.Header>
+                <Card.Title className="text-lg font-semibold">
+                  {editingForm ? 'Edit Form' : 'Create Form'}
+                </Card.Title>
+              </Modal.Header>
+
+              <Modal.Body className="space-y-4 py-4">
+                <div>
+                  <Input
+                    label="Form Title"
+                    placeholder="e.g. Summer Holiday Giveaway"
+                    {...register('title')}
+                    errorMessage={errors.title?.message}
+                    isInvalid={!!errors.title}
+                  />
                 </div>
-                {serverError && (
-                  <p className="rounded-lg bg-danger-50 px-3 py-2 text-sm text-danger-600">
-                    {serverError}
-                  </p>
-                )}
-              </ModalBody>
-              <ModalFooter>
-                <Button variant="light" onPress={onCloseModal}>
+
+                <div>
+                  <Input
+                    label="Description"
+                    placeholder="Brief description for recipients"
+                    {...register('description')}
+                    errorMessage={errors.description?.message}
+                    isInvalid={!!errors.description}
+                  />
+                </div>
+              </Modal.Body>
+
+              <Modal.Footer className="flex justify-end gap-2 pt-2">
+                <Button variant="secondary" onClick={handleCloseModal}>
                   Cancel
                 </Button>
-                <Button color="primary" type="submit" isLoading={isSubmitting}>
-                  Create &amp; Edit Inputs
+                <Button
+                  type="submit"
+                  variant="primary"
+                  isLoading={
+                    createMutation.isPending || updateMutation.isPending
+                  }
+                >
+                  {editingForm ? 'Save Changes' : 'Create'}
                 </Button>
-              </ModalFooter>
+              </Modal.Footer>
             </form>
-          )}
-        </ModalContent>
+          </Modal.Dialog>
+        </Modal.Container>
       </Modal>
     </div>
   )

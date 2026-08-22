@@ -1,256 +1,224 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Card, CardBody, CardHeader, SelectItem, Chip, Tooltip } from '@heroui/react'
-import { Select } from '#/components/Select'
-import { useState, useEffect } from 'react'
+import { createFileRoute, useRouter } from '@tanstack/react-router'
+import { Card, Chip, Tooltip } from '@heroui/react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { orpc } from '#/orpc/client'
 import { Input } from '#/components/Input'
 import { Button } from '#/components/Button'
-import type { FormField } from '#/lib/forms'
 import {
   RiAddLine,
   RiDeleteBinLine,
-  RiExternalLinkLine,
-  RiSaveLine,
   RiArrowLeftLine,
-  RiBarChartBoxLine,
+  RiInformationLine,
 } from 'react-icons/ri'
 
 export const Route = createFileRoute('/_protected/forms/$formId/')({
-  component: FormBuilderPage,
+  component: FormDetailsPage,
 })
 
-function FormBuilderPage() {
-  const { formId } = Route.useParams()
-  const queryClient = useQueryClient()
+const giftSchema = z.object({
+  name: z.string().min(1, 'Gift name is required'),
+  description: z.string().optional(),
+  imageUrl: z.string().url('Invalid URL').or(z.literal('')).optional(),
+  quantity: z.coerce.number().int().min(1, 'Quantity must be at least 1'),
+})
 
-  const { data: form, isLoading } = useQuery(
-    orpc.forms.getForm.queryOptions({ input: { id: formId } }),
+type GiftSchemaInput = z.infer<typeof giftSchema>
+
+function FormDetailsPage() {
+  const { formId } = Route.useParams()
+  const router = useRouter()
+  const queryClient = useQueryClient()
+  const [showAddGift, setShowAddGift] = useState(false)
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<GiftSchemaInput>({
+    resolver: zodResolver(giftSchema),
+    defaultValues: {
+      quantity: 1,
+    },
+  })
+
+  const { data: formSubmissions, isLoading } = useQuery(
+    orpc.forms.getFormSubmissions.queryOptions({ input: { formId } }),
   )
 
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [fields, setFields] = useState<FormField[]>([])
-  const [savedSuccess, setSavedSuccess] = useState(false)
-
-  useEffect(() => {
-    if (form) {
-      setTitle(form.title)
-      setDescription(form.description || '')
-      setFields((form.fields as unknown as FormField[]) || [])
-    }
-  }, [form])
-
-  const updateMutation = useMutation(
-    orpc.forms.updateFormFields.mutationOptions({
+  const addGiftMutation = useMutation(
+    orpc.forms.createForm.mutationOptions({
       onSuccess: () => {
-        queryClient.invalidateQueries(
-          orpc.forms.getForm.queryOptions({ input: { id: formId } }),
-        )
-        setSavedSuccess(true)
-        setTimeout(() => setSavedSuccess(false), 3000)
+        queryClient.invalidateQueries()
+        setShowAddGift(false)
+        reset({ name: '', description: '', imageUrl: '', quantity: 1 })
       },
     }),
   )
 
-  const addField = () => {
-    const newField: FormField = {
-      id: `field_${Date.now()}`,
-      label: 'New Question / Field',
-      type: 'text',
-      required: true,
-    }
-    setFields([...fields, newField])
+  const deleteGiftMutation = useMutation(
+    orpc.forms.createForm.mutationOptions({
+      onSuccess: () => {
+        queryClient.invalidateQueries()
+      },
+    }),
+  )
+
+  if (isLoading) {
+    return (
+      <div className="mx-auto max-w-4xl p-6">
+        <p className="text-gray-500">Loading form details...</p>
+      </div>
+    )
   }
 
-  const removeField = (index: number) => {
-    setFields(fields.filter((_, i) => i !== index))
-  }
+  const gifts: any[] = []
 
-  const updateField = (index: number, updated: Partial<FormField>) => {
-    const copy = [...fields]
-    copy[index] = { ...copy[index], ...updated }
-    setFields(copy)
-  }
-
-  const handleSave = () => {
-    updateMutation.mutate({
-      id: formId,
-      title,
-      description,
-      fields,
+  const onAddGift = (data: GiftSchemaInput) => {
+    addGiftMutation.mutate({
+      title: data.name,
+      description: data.description,
     })
   }
 
-  if (isLoading) {
-    return <div className="py-12 text-center text-sm text-gray-500">Loading form builder...</div>
-  }
-
-  if (!form) {
-    return <div className="py-12 text-center text-sm text-gray-500">Form not found</div>
-  }
-
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-      {/* Header Navigation */}
-      <div className="mb-6 flex items-center justify-between">
-        <Link
-          to="/dashboard"
-          className="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-900"
-        >
-          <RiArrowLeftLine /> Back to Dashboard
-        </Link>
+    <div className="mx-auto max-w-4xl p-6 space-y-6">
+      <Button
+        variant="secondary"
+        size="sm"
+        onClick={() => router.navigate({ to: '/dashboard' })}
+        startContent={<RiArrowLeftLine />}
+      >
+        Back to Dashboard
+      </Button>
 
-        <div className="flex items-center gap-2">
-          <Button
-            as={Link}
-            to="/forms/$formId/responses"
-            params={{ formId }}
-            variant="bordered"
-            size="sm"
-            startContent={<RiBarChartBoxLine />}
-          >
-            View Submissions
-          </Button>
-          <Button
-            as="a"
-            href={`/offers/${formId}`}
-            target="_blank"
-            rel="noreferrer"
-            color="secondary"
-            variant="flat"
-            size="sm"
-            startContent={<RiExternalLinkLine />}
-          >
-            Open Live Form
-          </Button>
-          <Button
-            color="primary"
-            size="sm"
-            isLoading={updateMutation.isPending}
-            startContent={<RiSaveLine />}
-            onPress={handleSave}
-          >
-            Save Changes
-          </Button>
-        </div>
-      </div>
-
-      {savedSuccess && (
-        <div className="mb-6 rounded-lg bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-          Form saved successfully! Share link: <strong>{window.location.origin}/offers/{formId}</strong>
-        </div>
-      )}
-
-      {/* Main Settings Card */}
-      <Card shadow="sm" className="mb-6 bg-white">
-        <CardHeader className="flex items-center justify-between border-b border-gray-100">
-          <h2 className="text-base font-bold text-gray-900">Form Details</h2>
-          <Chip size="sm" color="warning" variant="flat">
-            Amazon Preset
-          </Chip>
-        </CardHeader>
-        <CardBody className="flex flex-col gap-4">
-          <Input
-            label="Form Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <Input
-            label="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </CardBody>
+      <Card className="p-6">
+        <Card.Header className="flex justify-between items-start pb-4">
+          <div>
+            <Card.Title className="text-2xl font-bold">Form Details</Card.Title>
+            <Card.Description className="text-gray-500 mt-1">
+              Manage form gifts and options
+            </Card.Description>
+          </div>
+          <Chip color="accent">Active</Chip>
+        </Card.Header>
       </Card>
 
-      {/* Form Inputs Editor */}
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-bold text-gray-900">Form Inputs / Questions</h2>
-        <Button
-          size="sm"
-          color="primary"
-          variant="flat"
-          startContent={<RiAddLine />}
-          onPress={addField}
-        >
-          Add Input Field
-        </Button>
-      </div>
+      <div className="space-y-4">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-semibold flex items-center gap-2">
+            Gifts <Chip size="sm">{gifts.length}</Chip>
+          </h2>
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={() => setShowAddGift(!showAddGift)}
+            startContent={<RiAddLine />}
+          >
+            Add Gift
+          </Button>
+        </div>
 
-      <div className="flex flex-col gap-4">
-        {fields.map((field, idx) =>
-          field.id === 'email' ? null : (
-          <Card key={field.id} shadow="sm" className="bg-white">
-            <CardBody className="flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-gray-400">FIELD #{idx + 1}</span>
-                <Tooltip content="Delete field" showArrow>
+        {showAddGift && (
+          <Card className="p-6 border-2 border-indigo-100">
+            <Card.Header className="pb-4">
+              <Card.Title className="text-lg font-semibold">
+                New Gift Option
+              </Card.Title>
+            </Card.Header>
+            <Card.Content>
+              <form onSubmit={handleSubmit(onAddGift)} className="space-y-4">
+                <Input
+                  label="Gift Name"
+                  placeholder="e.g. Free T-Shirt"
+                  {...register('name')}
+                  errorMessage={errors.name?.message}
+                  isInvalid={!!errors.name}
+                />
+                <Input
+                  label="Description"
+                  placeholder="Optional description"
+                  {...register('description')}
+                />
+                <Input
+                  label="Image URL"
+                  placeholder="https://..."
+                  {...register('imageUrl')}
+                  errorMessage={errors.imageUrl?.message}
+                  isInvalid={!!errors.imageUrl}
+                />
+                <Input
+                  type="number"
+                  label="Quantity Available"
+                  {...register('quantity')}
+                  errorMessage={errors.quantity?.message}
+                  isInvalid={!!errors.quantity}
+                />
+                <div className="flex justify-end gap-2 pt-2">
                   <Button
-                    size="sm"
-                    color="danger"
-                    variant="light"
-                    isIconOnly
-                    onPress={() => removeField(idx)}
+                    variant="secondary"
+                    onClick={() => setShowAddGift(false)}
                   >
-                    <RiDeleteBinLine />
+                    Cancel
                   </Button>
-                </Tooltip>
-              </div>
-
-              <>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <Input
-                      label="Label / Question"
-                      value={field.label}
-                      onChange={(e) => updateField(idx, { label: e.target.value })}
-                    />
-                    <Select
-                      label="Input Type"
-                      selectedKeys={[field.type]}
-                      onChange={(e) =>
-                        updateField(idx, {
-                          type: e.target.value as 'text' | 'email' | 'number' | 'select',
-                        })
-                      }
-                    >
-                      <SelectItem key="text">Text Input</SelectItem>
-                      <SelectItem key="number">Number / Mobile</SelectItem>
-                      <SelectItem key="email">Email Address</SelectItem>
-                      <SelectItem key="select">Dropdown Select</SelectItem>
-                    </Select>
-                  </div>
-
-                  {field.type === 'select' && (
-                    <Input
-                      label="Options (comma separated)"
-                      placeholder="e.g. Prize A, Prize B, Prize C"
-                      value={field.options?.join(', ') || ''}
-                      onChange={(e) =>
-                        updateField(idx, {
-                          options: e.target.value.split(',').map((s) => s.trim()),
-                        })
-                      }
-                    />
-                  )}
-
-                  <div className="flex items-center gap-2 pt-1">
-                    <input
-                      type="checkbox"
-                      id={`opt_${field.id}`}
-                      checked={!field.required}
-                      onChange={(e) => updateField(idx, { required: !e.target.checked })}
-                      className="h-4 w-4 rounded border-gray-300 text-amber-500 focus:ring-amber-400"
-                    />
-                    <label htmlFor={`opt_${field.id}`} className="text-xs text-gray-600 font-medium">
-                      Optional Field
-                    </label>
-                  </div>
-                </>
-            </CardBody>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    isLoading={addGiftMutation.isPending}
+                  >
+                    Save Gift
+                  </Button>
+                </div>
+              </form>
+            </Card.Content>
           </Card>
-          )
         )}
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {gifts.map((gift) => (
+            <Card key={gift.id} className="p-4 flex flex-col justify-between">
+              <Card.Header className="flex justify-between items-start pb-2">
+                <Card.Title className="font-semibold text-gray-900">
+                  {gift.name}
+                </Card.Title>
+                <Tooltip>
+                  <Tooltip.Trigger>
+                    <button className="text-gray-400 hover:text-gray-600">
+                      <RiInformationLine />
+                    </button>
+                  </Tooltip.Trigger>
+                  <Tooltip.Content className="text-xs p-2">
+                    Gift ID: {gift.id}
+                  </Tooltip.Content>
+                </Tooltip>
+              </Card.Header>
+
+              {gift.description && (
+                <Card.Content className="text-sm text-gray-500 py-2">
+                  {gift.description}
+                </Card.Content>
+              )}
+
+              <Card.Footer className="flex justify-between items-center pt-4 border-t border-gray-100">
+                <span className="text-xs text-gray-500">
+                  Qty: <strong>{gift.quantity}</strong>
+                </span>
+                <Button
+                  size="sm"
+                  variant="danger"
+                  onClick={() => deleteGiftMutation.mutate({ title: gift.id })}
+                  isLoading={deleteGiftMutation.isPending}
+                >
+                  <RiDeleteBinLine />
+                </Button>
+              </Card.Footer>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   )

@@ -29,7 +29,9 @@ async function handle({ request }: { request: Request }) {
         const sub = event.data
         const userId = String(sub.metadata?.userId ?? '')
         if (!userId) {
-          console.warn('[webhook] subscription.active missing userId in metadata')
+          console.warn(
+            '[webhook] subscription.active missing userId in metadata',
+          )
           break
         }
 
@@ -49,7 +51,9 @@ async function handle({ request }: { request: Request }) {
               planId,
               billingInterval: interval,
               productId: sub.product_id,
-              currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+              currentPeriodEnd: sub.next_billing_date
+                ? new Date(sub.next_billing_date)
+                : null,
               cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
             },
           })
@@ -63,7 +67,9 @@ async function handle({ request }: { request: Request }) {
               status: 'active',
               planId,
               billingInterval: interval,
-              currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+              currentPeriodEnd: sub.next_billing_date
+                ? new Date(sub.next_billing_date)
+                : null,
               cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
             },
           })
@@ -77,7 +83,9 @@ async function handle({ request }: { request: Request }) {
           where: { dodoSubscriptionId: sub.subscription_id },
           data: {
             status: 'active',
-            currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+            currentPeriodEnd: sub.next_billing_date
+              ? new Date(sub.next_billing_date)
+              : null,
             cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
           },
         })
@@ -95,7 +103,9 @@ async function handle({ request }: { request: Request }) {
             planId,
             billingInterval: interval,
             productId: sub.product_id,
-            currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+            currentPeriodEnd: sub.next_billing_date
+              ? new Date(sub.next_billing_date)
+              : null,
           },
         })
         break

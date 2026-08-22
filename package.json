@@ -2,28 +2,26 @@
   "name": "driz",
   "private": true,
   "type": "module",
-  "imports": {
-    "#/*": "./src/*"
-  },
   "scripts": {
     "dev": "dotenv -e .env -- sh -c \"NODE_OPTIONS='--import ./instrument.server.mjs' vite dev --port 5173\"",
-    "generate-routes": "tsr generate",
     "build": "vite build && cp instrument.server.mjs .output/server",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "lint": "eslint",
-    "format": "prettier --write . && eslint --fix",
-    "check": "prettier --check .",
     "start": "node --import ./.output/server/instrument.server.mjs .output/server/index.mjs",
+    "preview": "vite preview",
+    "generate-routes": "tsr generate",
     "post-cta-init": "npx -y create-db@latest --user-agent tanstack/tsrouter",
     "db:generate": "dotenv -e .env.local -- prisma generate",
     "db:push": "dotenv -e .env.local -- prisma db push",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
+    "db:seed": "dotenv -e .env.local -- prisma db seed",
     "db:studio": "dotenv -e .env.local -- prisma studio",
-    "db:seed": "dotenv -e .env.local -- prisma db seed"
+    "lint": "eslint",
+    "check": "prettier --check .",
+    "format": "prettier --write . && eslint --fix",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@heroui/react": "2.8.10",
+    "@heroui/react": "^3.0.0-beta.5",
+    "@heroui/styles": "^3.0.0-beta.5",
     "@hookform/resolvers": "5.4.0",
     "@orpc/client": "^1.13.6",
     "@orpc/json-schema": "^1.13.6",
@@ -76,6 +74,9 @@
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.5"
+  },
+  "imports": {
+    "#/*": "./src/*"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
