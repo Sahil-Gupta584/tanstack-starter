@@ -20,7 +20,10 @@ export const dodo = new DodoPayments({
  * These are static config in #/lib/payments/plans — create the products once in
  * the Dodo dashboard and paste their IDs there.
  */
-export function getDodoProductId(planId: PlanId, interval: BillingInterval): string {
+export function getDodoProductId(
+  planId: PlanId,
+  interval: BillingInterval,
+): string {
   const id = getPlan(planId).dodoProductIds[interval]
   if (!id) {
     throw new Error(

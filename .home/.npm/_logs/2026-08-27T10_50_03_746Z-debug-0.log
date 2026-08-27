@@ -1,0 +1,36 @@
+0 verbose cli /usr/bin/node /usr/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.4
+2 info using node@v22.22.0
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m11dajmnq9tr5azwgr0za51v/01m11danr5gsawpdf8mxvwgfkp/.npmrc
+5 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m11dajmnq9tr5azwgr0za51v/01m11danr5gsawpdf8mxvwgfkp/.home/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm exec prettier --check .
+8 verbose argv "exec" "--" "prettier" "--check" "."
+9 verbose logfile logs-max:10 dir:/home/gjugn/.local/share/trueforge/sandboxes/01m11dajmnq9tr5azwgr0za51v/01m11danr5gsawpdf8mxvwgfkp/.home/.npm/_logs/2026-08-27T10_50_03_746Z-
+10 verbose logfile /home/gjugn/.local/share/trueforge/sandboxes/01m11dajmnq9tr5azwgr0za51v/01m11danr5gsawpdf8mxvwgfkp/.home/.npm/_logs/2026-08-27T10_50_03_746Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2026110976 maxSize:506527744 maxEntrySize:253263872
+13 http fetch GET 200 https://registry.npmjs.org/prettier 5237ms (cache miss)
+14 silly packumentCache heap:2026110976 maxSize:506527744 maxEntrySize:253263872
+15 silly packumentCache heap:2026110976 maxSize:506527744 maxEntrySize:253263872
+16 warn exec The following package was not found and will be installed: prettier@3.9.6
+17 silly idealTree buildDeps
+18 silly fetch manifest prettier@3.9.6
+19 silly packumentCache full:https://registry.npmjs.org/prettier cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/prettier 354ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/prettier set size:undefined disposed:false
+22 silly placeDep ROOT prettier@3.9.6 OK for:  want: 3.9.6
+23 silly reify moves {}
+24 silly audit bulk request { prettier: [ '3.9.6' ] }
+25 http cache prettier@https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz 1ms (cache hit)
+26 silly tarball no local data for prettier@https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz. Extracting by manifest.
+27 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 342ms
+28 silly audit report {}
+29 http fetch GET 200 https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz 6833ms (cache miss)
+30 verbose cwd /home/gjugn/.local/share/trueforge/sandboxes/01m11dajmnq9tr5azwgr0za51v/01m11danr5gsawpdf8mxvwgfkp
+31 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+32 verbose node v22.22.0
+33 verbose npm  v10.9.4
+34 verbose exit 1
+35 verbose code 1
