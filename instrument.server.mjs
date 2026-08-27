@@ -1,6 +1,10 @@
 import * as Sentry from '@sentry/tanstackstart-react'
+import { env } from './src/env.ts'
 
-const sentryDsn = import.meta.env?.VITE_SENTRY_DSN ?? process.env.VITE_SENTRY_DSN
+// Validate environment variables on startup
+// env is already validated by createEnv when imported
+
+const sentryDsn = env.VITE_SENTRY_DSN
 
 if (!sentryDsn) {
   console.warn('VITE_SENTRY_DSN is not defined. Sentry is not running.')
