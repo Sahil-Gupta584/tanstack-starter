@@ -25,8 +25,20 @@ export const env = createEnv({
   },
 
   runtimeEnv: {
-    ...import.meta.env,
-    ...process.env,
+    DATABASE_URL: process.env.DATABASE_URL,
+    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    DODO_PAYMENTS_API_KEY: process.env.DODO_PAYMENTS_API_KEY,
+    DODO_PAYMENTS_WEBHOOK_KEY: process.env.DODO_PAYMENTS_WEBHOOK_KEY,
+    DODO_PAYMENTS_ENVIRONMENT: process.env.DODO_PAYMENTS_ENVIRONMENT,
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
+    NODE_ENV: process.env.NODE_ENV,
+    VITE_SENTRY_DSN: process.env.VITE_SENTRY_DSN,
+    VITE_SENTRY_ORG: process.env.VITE_SENTRY_ORG,
+    VITE_SENTRY_PROJECT: process.env.VITE_SENTRY_PROJECT,
   },
 
   emptyStringAsUndefined: true,
