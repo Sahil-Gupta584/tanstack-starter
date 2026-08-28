@@ -1,0 +1,1577 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.4
+2 info using node@v22.22.0
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.npmrc
+5 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm install @react-aria/utils
+8 verbose argv "install" "@react-aria/utils"
+9 verbose logfile logs-max:10 dir:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npm/_logs/2026-08-28T08_16_44_981Z-
+10 verbose logfile /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npm/_logs/2026-08-28T08_16_44_981Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2026110976 maxSize:506527744 maxEntrySize:253263872
+13 silly idealTree buildDeps
+14 silly fetch manifest @react-aria/utils@*
+15 silly packumentCache full:https://registry.npmjs.org/@react-aria%2futils cache-miss
+16 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+17 http fetch GET 200 https://registry.npmjs.org/@react-aria%2futils 6228ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/@react-aria%2futils set size:undefined disposed:false
+19 silly fetch manifest react@^19.2.0
+20 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/react 598ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+23 silly fetch manifest react-dom@^19.2.0
+24 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/react-dom 595ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/react-dom set size:undefined disposed:false
+27 silly placeDep ROOT @react-aria/utils@3.34.1 OK for:  want: *
+28 silly fetch manifest @react-aria/i18n@^3.13.1
+29 silly packumentCache full:https://registry.npmjs.org/@react-aria%2fi18n cache-miss
+30 http fetch GET 200 https://registry.npmjs.org/@react-aria%2fi18n 861ms (cache miss)
+31 silly packumentCache full:https://registry.npmjs.org/@react-aria%2fi18n set size:undefined disposed:false
+32 silly fetch manifest react@>=19.0.0
+33 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+34 http cache https://registry.npmjs.org/react 56ms (cache hit)
+35 silly packumentCache full:https://registry.npmjs.org/react set size:6922122 disposed:false
+36 silly fetch manifest react-dom@>=19.0.0
+37 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+38 http cache https://registry.npmjs.org/react-dom 41ms (cache hit)
+39 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9306120 disposed:false
+40 silly fetch manifest @react-aria/ssr@^3.10.1
+41 silly packumentCache full:https://registry.npmjs.org/@react-aria%2fssr cache-miss
+42 http fetch GET 200 https://registry.npmjs.org/@react-aria%2fssr 9370ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/@react-aria%2fssr set size:undefined disposed:false
+44 silly placeDep ROOT @react-aria/i18n@3.13.1 OK for: @heroui/react@3.2.4 want: ^3.13.1
+45 silly placeDep ROOT @react-aria/ssr@3.10.1 OK for: @heroui/react@3.2.4 want: ^3.10.1
+46 silly fetch manifest @internationalized/message@^3.1.9
+47 silly packumentCache full:https://registry.npmjs.org/@internationalized%2fmessage cache-miss
+48 http fetch GET 200 https://registry.npmjs.org/@internationalized%2fmessage -7781ms (cache miss)
+49 silly packumentCache full:https://registry.npmjs.org/@internationalized%2fmessage set size:undefined disposed:false
+50 silly placeDep ROOT @internationalized/message@3.1.10 OK for: @react-aria/i18n@3.13.1 want: ^3.1.9
+51 silly fetch manifest intl-messageformat@^10.1.0
+52 silly packumentCache full:https://registry.npmjs.org/intl-messageformat cache-miss
+53 http fetch GET 200 https://registry.npmjs.org/intl-messageformat 414ms (cache miss)
+54 silly packumentCache full:https://registry.npmjs.org/intl-messageformat set size:undefined disposed:false
+55 silly placeDep ROOT intl-messageformat@10.7.18 OK for: @internationalized/message@3.1.10 want: ^10.1.0
+56 silly fetch manifest @formatjs/fast-memoize@2.2.7
+57 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ffast-memoize cache-miss
+58 silly fetch manifest @formatjs/ecma402-abstract@2.3.6
+59 silly packumentCache full:https://registry.npmjs.org/@formatjs%2fecma402-abstract cache-miss
+60 silly fetch manifest @formatjs/icu-messageformat-parser@2.11.4
+61 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ficu-messageformat-parser cache-miss
+62 http fetch GET 200 https://registry.npmjs.org/@formatjs%2ffast-memoize 321ms (cache miss)
+63 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ffast-memoize set size:undefined disposed:false
+64 http fetch GET 200 https://registry.npmjs.org/@formatjs%2fecma402-abstract 498ms (cache miss)
+65 silly packumentCache full:https://registry.npmjs.org/@formatjs%2fecma402-abstract set size:undefined disposed:false
+66 http fetch GET 200 https://registry.npmjs.org/@formatjs%2ficu-messageformat-parser 733ms (cache miss)
+67 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ficu-messageformat-parser set size:undefined disposed:false
+68 silly fetch manifest @react-spectrum/provider@^3.0.0
+69 silly packumentCache full:https://registry.npmjs.org/@react-spectrum%2fprovider cache-miss
+70 http fetch GET 200 https://registry.npmjs.org/@react-spectrum%2fprovider 923ms (cache miss)
+71 silly packumentCache full:https://registry.npmjs.org/@react-spectrum%2fprovider set size:undefined disposed:false
+72 silly fetch manifest react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+73 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+74 http cache https://registry.npmjs.org/react 29ms (cache hit)
+75 silly packumentCache full:https://registry.npmjs.org/react set size:6922122 disposed:false
+76 silly fetch manifest react-dom@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+77 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+78 http cache https://registry.npmjs.org/react-dom 26ms (cache hit)
+79 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9306120 disposed:false
+80 silly placeDep ROOT @react-spectrum/provider@3.11.1 OK for: @react-types/color@3.2.0 want: ^3.0.0
+81 silly placeDep ROOT @formatjs/ecma402-abstract@2.3.6 OK for: intl-messageformat@10.7.18 want: 2.3.6
+82 silly placeDep ROOT @formatjs/fast-memoize@2.2.7 OK for: intl-messageformat@10.7.18 want: 2.2.7
+83 silly placeDep ROOT @formatjs/icu-messageformat-parser@2.11.4 OK for: intl-messageformat@10.7.18 want: 2.11.4
+84 silly fetch manifest @formatjs/intl-localematcher@0.6.2
+85 silly packumentCache full:https://registry.npmjs.org/@formatjs%2fintl-localematcher cache-miss
+86 silly fetch manifest @formatjs/icu-skeleton-parser@1.8.16
+87 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ficu-skeleton-parser cache-miss
+88 http fetch GET 200 https://registry.npmjs.org/@formatjs%2fintl-localematcher 359ms (cache miss)
+89 silly packumentCache full:https://registry.npmjs.org/@formatjs%2fintl-localematcher set size:undefined disposed:false
+90 http fetch GET 200 https://registry.npmjs.org/@formatjs%2ficu-skeleton-parser 537ms (cache miss)
+91 silly packumentCache full:https://registry.npmjs.org/@formatjs%2ficu-skeleton-parser set size:undefined disposed:false
+92 silly placeDep ROOT @formatjs/intl-localematcher@0.6.2 OK for: @formatjs/ecma402-abstract@2.3.6 want: 0.6.2
+93 silly placeDep ROOT @formatjs/icu-skeleton-parser@1.8.16 OK for: @formatjs/icu-messageformat-parser@2.11.4 want: 1.8.16
+94 silly fetch manifest eslint@^10.0.0
+95 silly packumentCache full:https://registry.npmjs.org/eslint cache-miss
+96 http cache https://registry.npmjs.org/eslint 16ms (cache hit)
+97 silly packumentCache full:https://registry.npmjs.org/eslint set size:2070000 disposed:false
+98 silly fetch manifest jiti@*
+99 silly packumentCache full:https://registry.npmjs.org/jiti cache-miss
+100 http cache https://registry.npmjs.org/jiti 12ms (cache hit)
+101 silly packumentCache full:https://registry.npmjs.org/jiti set size:387989 disposed:false
+102 warn ERESOLVE overriding peer dependency {
+102 warn ERESOLVE   code: 'ERESOLVE',
+102 warn ERESOLVE   edge: {
+102 warn ERESOLVE     type: 'peerOptional',
+102 warn ERESOLVE     name: 'eslint',
+102 warn ERESOLVE     spec: '^10.0.0',
+102 warn ERESOLVE     error: 'INVALID',
+102 warn ERESOLVE     from: {
+102 warn ERESOLVE       name: '@eslint/js',
+102 warn ERESOLVE       version: '10.0.1',
+102 warn ERESOLVE       location: 'node_modules/@tanstack/eslint-config/node_modules/@eslint/js',
+102 warn ERESOLVE       isWorkspace: false,
+102 warn ERESOLVE       dependents: [Array]
+102 warn ERESOLVE     }
+102 warn ERESOLVE   },
+102 warn ERESOLVE   dep: {
+102 warn ERESOLVE     name: 'eslint',
+102 warn ERESOLVE     version: '10.9.1',
+102 warn ERESOLVE     whileInstalling: {
+102 warn ERESOLVE       name: '@eslint/js',
+102 warn ERESOLVE       version: '10.0.1',
+102 warn ERESOLVE       path: '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tanstack/eslint-config/node_modules/@eslint/js'
+102 warn ERESOLVE     },
+102 warn ERESOLVE     location: 'node_modules/eslint',
+102 warn ERESOLVE     isWorkspace: false,
+102 warn ERESOLVE     dependents: [ [Object] ]
+102 warn ERESOLVE   },
+102 warn ERESOLVE   force: false,
+102 warn ERESOLVE   isMine: false,
+102 warn ERESOLVE   strictPeerDeps: false,
+102 warn ERESOLVE   current: {
+102 warn ERESOLVE     name: 'eslint',
+102 warn ERESOLVE     version: '9.39.5',
+102 warn ERESOLVE     location: 'node_modules/eslint',
+102 warn ERESOLVE     isWorkspace: false,
+102 warn ERESOLVE     dependents: [
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object],
+102 warn ERESOLVE       [Object], [Object]
+102 warn ERESOLVE     ]
+102 warn ERESOLVE   },
+102 warn ERESOLVE   peerConflict: {
+102 warn ERESOLVE     current: {
+102 warn ERESOLVE       name: 'eslint',
+102 warn ERESOLVE       version: '9.39.5',
+102 warn ERESOLVE       location: 'node_modules/eslint',
+102 warn ERESOLVE       isWorkspace: false,
+102 warn ERESOLVE       dependents: [Array]
+102 warn ERESOLVE     },
+102 warn ERESOLVE     peer: {
+102 warn ERESOLVE       name: 'eslint',
+102 warn ERESOLVE       version: '10.9.1',
+102 warn ERESOLVE       whileInstalling: [Object],
+102 warn ERESOLVE       location: 'node_modules/eslint',
+102 warn ERESOLVE       isWorkspace: false,
+102 warn ERESOLVE       dependents: [Array]
+102 warn ERESOLVE     }
+102 warn ERESOLVE   }
+102 warn ERESOLVE }
+103 silly reify moves {}
+104 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-wasm32-wasi
+105 silly reify mark deleted [
+105 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-wasm32-wasi'
+105 silly reify ]
+106 silly audit bulk request {
+106 silly audit   '@acemir/cssom': [ '0.9.31' ],
+106 silly audit   '@adobe/react-spectrum': [ '3.47.3' ],
+106 silly audit   '@adobe/react-spectrum-ui': [ '1.2.1' ],
+106 silly audit   '@adobe/react-spectrum-workflow': [ '2.3.5' ],
+106 silly audit   '@apm-js-collab/code-transformer': [ '0.18.1' ],
+106 silly audit   '@apm-js-collab/code-transformer-bundler-plugins': [ '0.7.4' ],
+106 silly audit   '@apm-js-collab/tracing-hooks': [ '0.13.0' ],
+106 silly audit   '@asamuzakjp/css-color': [ '5.1.11' ],
+106 silly audit   '@asamuzakjp/dom-selector': [ '6.8.1' ],
+106 silly audit   'lru-cache': [ '11.5.2', '5.1.1' ],
+106 silly audit   '@asamuzakjp/generational-cache': [ '1.0.1' ],
+106 silly audit   '@asamuzakjp/nwsapi': [ '2.3.9' ],
+106 silly audit   '@babel/code-frame': [ '7.29.7', '7.27.1' ],
+106 silly audit   '@babel/compat-data': [ '7.29.7' ],
+106 silly audit   '@babel/core': [ '7.29.7' ],
+106 silly audit   '@babel/generator': [ '7.29.8' ],
+106 silly audit   '@babel/helper-compilation-targets': [ '7.29.7' ],
+106 silly audit   '@babel/helper-globals': [ '7.29.7' ],
+106 silly audit   '@babel/helper-module-imports': [ '7.29.7' ],
+106 silly audit   '@babel/helper-module-transforms': [ '7.29.7' ],
+106 silly audit   '@babel/helper-string-parser': [ '7.29.7' ],
+106 silly audit   '@babel/helper-validator-identifier': [ '7.29.7' ],
+106 silly audit   '@babel/helper-validator-option': [ '7.29.7' ],
+106 silly audit   '@babel/helpers': [ '7.29.7' ],
+106 silly audit   '@babel/parser': [ '7.29.8' ],
+106 silly audit   '@babel/runtime': [ '7.29.7' ],
+106 silly audit   '@babel/template': [ '7.29.7' ],
+106 silly audit   '@babel/traverse': [ '7.29.8' ],
+106 silly audit   '@babel/types': [ '7.29.8' ],
+106 silly audit   '@better-auth/core': [ '1.7.1' ],
+106 silly audit   '@better-auth/drizzle-adapter': [ '1.7.1' ],
+106 silly audit   '@better-auth/kysely-adapter': [ '1.7.1' ],
+106 silly audit   '@better-auth/memory-adapter': [ '1.7.1' ],
+106 silly audit   '@better-auth/mongo-adapter': [ '1.7.1' ],
+106 silly audit   '@better-auth/prisma-adapter': [ '1.7.1' ],
+106 silly audit   '@better-auth/telemetry': [ '1.7.1' ],
+106 silly audit   '@better-auth/utils': [ '0.4.2', '0.5.0' ],
+106 silly audit   '@better-fetch/fetch': [ '1.3.1' ],
+106 silly audit   '@bramus/specificity': [ '2.4.2' ],
+106 silly audit   '@csstools/color-helpers': [ '6.1.1' ],
+106 silly audit   '@csstools/css-calc': [ '3.3.0' ],
+106 silly audit   '@csstools/css-color-parser': [ '4.2.0' ],
+106 silly audit   '@csstools/css-parser-algorithms': [ '4.0.0' ],
+106 silly audit   '@csstools/css-syntax-patches-for-csstree': [ '1.1.8' ],
+106 silly audit   '@csstools/css-tokenizer': [ '4.0.0' ],
+106 silly audit   '@electric-sql/pglite': [ '0.4.3' ],
+106 silly audit   '@electric-sql/pglite-socket': [ '0.1.3' ],
+106 silly audit   '@electric-sql/pglite-tools': [ '0.3.3' ],
+106 silly audit   '@emnapi/core': [ '1.11.3', '1.10.0' ],
+106 silly audit   '@emnapi/runtime': [ '1.11.3', '1.10.0' ],
+106 silly audit   '@emnapi/wasi-threads': [ '1.2.3', '1.2.1' ],
+106 silly audit   '@esbuild/aix-ppc64': [ '0.28.2' ],
+106 silly audit   '@esbuild/android-arm': [ '0.28.2' ],
+106 silly audit   '@esbuild/android-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/android-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/darwin-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/darwin-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/freebsd-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/freebsd-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-arm': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-ia32': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-loong64': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-mips64el': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-ppc64': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-riscv64': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-s390x': [ '0.28.2' ],
+106 silly audit   '@esbuild/linux-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/netbsd-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/netbsd-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/openbsd-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/openbsd-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/openharmony-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/sunos-x64': [ '0.28.2' ],
+106 silly audit   '@esbuild/win32-arm64': [ '0.28.2' ],
+106 silly audit   '@esbuild/win32-ia32': [ '0.28.2' ],
+106 silly audit   '@esbuild/win32-x64': [ '0.28.2' ],
+106 silly audit   '@eslint-community/eslint-utils': [ '4.10.1' ],
+106 silly audit   'eslint-visitor-keys': [ '3.4.3', '5.0.1', '4.2.1' ],
+106 silly audit   '@eslint-community/regexpp': [ '4.12.2' ],
+106 silly audit   '@eslint/config-array': [ '0.21.2' ],
+106 silly audit   '@eslint/config-helpers': [ '0.4.2' ],
+106 silly audit   '@eslint/core': [ '0.17.0' ],
+106 silly audit   '@eslint/eslintrc': [ '3.3.6' ],
+106 silly audit   globals: [ '14.0.0', '15.15.0', '17.11.0' ],
+106 silly audit   '@eslint/js': [ '9.39.5', '10.0.1' ],
+106 silly audit   '@eslint/object-schema': [ '2.1.7' ],
+106 silly audit   '@eslint/plugin-kit': [ '0.4.1' ],
+106 silly audit   '@exodus/bytes': [ '1.15.1' ],
+106 silly audit   '@heroui/react': [ '3.2.4' ],
+106 silly audit   '@heroui/styles': [ '3.2.4' ],
+106 silly audit   '@hookform/resolvers': [ '5.4.0' ],
+106 silly audit   '@humanfs/core': [ '0.19.2' ],
+106 silly audit   '@humanfs/node': [ '0.16.8' ],
+106 silly audit   '@humanfs/types': [ '0.15.0' ],
+106 silly audit   '@humanwhocodes/module-importer': [ '1.0.1' ],
+106 silly audit   '@humanwhocodes/retry': [ '0.4.3' ],
+106 silly audit   '@internationalized/date': [ '3.12.3' ],
+106 silly audit   '@internationalized/number': [ '3.6.7' ],
+106 silly audit   '@internationalized/string': [ '3.2.10' ],
+106 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+106 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+106 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+106 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+106 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+106 silly audit   '@napi-rs/wasm-runtime': [ '1.2.3' ],
+106 silly audit   '@neodrag/core': [ '3.0.0-next.11' ],
+106 silly audit   '@neodrag/solid': [ '3.0.0-next.11' ],
+106 silly audit   '@noble/ciphers': [ '2.3.0' ],
+106 silly audit   '@noble/hashes': [ '2.3.0' ],
+106 silly audit   '@oozcitak/dom': [ '2.0.2' ],
+106 silly audit   '@oozcitak/infra': [ '2.0.2' ],
+106 silly audit   '@oozcitak/url': [ '3.0.0' ],
+106 silly audit   '@oozcitak/util': [ '10.0.0' ],
+106 silly audit   '@opentelemetry/api': [ '1.9.1' ],
+106 silly audit   '@opentelemetry/api-logs': [ '0.220.0' ],
+106 silly audit   '@opentelemetry/core': [ '2.10.0' ],
+106 silly audit   '@opentelemetry/instrumentation': [ '0.220.0' ],
+106 silly audit   '@opentelemetry/resources': [ '2.10.0' ],
+106 silly audit   '@opentelemetry/sdk-trace': [ '2.10.0' ],
+106 silly audit   '@opentelemetry/sdk-trace-base': [ '2.10.0' ],
+106 silly audit   '@opentelemetry/semantic-conventions': [ '1.43.0' ],
+106 silly audit   '@orpc/client': [ '1.15.0' ],
+106 silly audit   '@orpc/contract': [ '1.15.0' ],
+106 silly audit   '@orpc/interop': [ '1.15.0' ],
+106 silly audit   '@orpc/json-schema': [ '1.15.0' ],
+106 silly audit   '@orpc/openapi': [ '1.15.0' ],
+106 silly audit   '@orpc/openapi-client': [ '1.15.0' ],
+106 silly audit   '@orpc/server': [ '1.15.0' ],
+106 silly audit   '@orpc/shared': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server-aws-lambda': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server-fastify': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server-fetch': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server-node': [ '1.15.0' ],
+106 silly audit   '@orpc/standard-server-peer': [ '1.15.0' ],
+106 silly audit   '@orpc/tanstack-query': [ '1.15.0' ],
+106 silly audit   '@orpc/zod': [ '1.15.0' ],
+106 silly audit   '@oxc-parser/binding-android-arm-eabi': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-android-arm64': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-darwin-arm64': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-darwin-x64': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-freebsd-x64': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-arm-gnueabihf': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-arm-musleabihf': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-arm64-gnu': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-arm64-musl': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-ppc64-gnu': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-riscv64-gnu': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-riscv64-musl': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-s390x-gnu': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-x64-gnu': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-linux-x64-musl': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-openharmony-arm64': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-wasm32-wasi': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-win32-arm64-msvc': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-win32-ia32-msvc': [ '0.120.0' ],
+106 silly audit   '@oxc-parser/binding-win32-x64-msvc': [ '0.120.0' ],
+106 silly audit   '@oxc-project/types': [ '0.120.0', '0.146.0' ],
+106 silly audit   '@prisma/adapter-pg': [ '7.9.1' ],
+106 silly audit   '@prisma/client': [ '7.9.1' ],
+106 silly audit   '@prisma/client-runtime-utils': [ '7.9.1' ],
+106 silly audit   '@prisma/config': [ '7.9.1' ],
+106 silly audit   '@prisma/debug': [ '7.9.1', '7.2.0' ],
+106 silly audit   '@prisma/dev': [ '0.24.17' ],
+106 silly audit   '@prisma/driver-adapter-utils': [ '7.9.1' ],
+106 silly audit   '@prisma/engines': [ '7.9.1' ],
+106 silly audit   '@prisma/engines-version': [ '7.9.0-1.e922089b7d7502aff4249d5da3420f6fa55fc6ad' ],
+106 silly audit   '@prisma/get-platform': [ '7.9.1', '7.2.0' ],
+106 silly audit   '@prisma/fetch-engine': [ '7.9.1' ],
+106 silly audit   '@prisma/query-plan-executor': [ '7.2.0' ],
+106 silly audit   '@prisma/streams-local': [ '0.1.11' ],
+106 silly audit   ajv: [ '8.20.0', '6.15.0' ],
+106 silly audit   'json-schema-traverse': [ '1.0.0', '0.4.1' ],
+106 silly audit   '@prisma/studio-core': [ '0.33.0' ],
+106 silly audit   '@radix-ui/primitive': [ '1.1.3' ],
+106 silly audit   '@radix-ui/react-avatar': [ '1.1.11' ],
+106 silly audit   '@radix-ui/react-compose-refs': [ '1.1.2' ],
+106 silly audit   '@radix-ui/react-context': [ '1.1.3' ],
+106 silly audit   '@radix-ui/react-primitive': [ '2.1.4', '2.1.3' ],
+106 silly audit   '@radix-ui/react-slot': [ '1.2.4', '1.2.3' ],
+106 silly audit   '@radix-ui/react-toggle': [ '1.1.10' ],
+106 silly audit   '@radix-ui/react-use-callback-ref': [ '1.1.1' ],
+106 silly audit   '@radix-ui/react-use-controllable-state': [ '1.2.2' ],
+106 silly audit   '@radix-ui/react-use-effect-event': [ '0.0.2' ],
+106 silly audit   '@radix-ui/react-use-is-hydrated': [ '0.1.0' ],
+106 silly audit   '@radix-ui/react-use-layout-effect': [ '1.1.1' ],
+106 silly audit   '@react-aria/color': [ '3.2.1' ],
+106 silly audit   '@react-spectrum/color': [ '3.2.1' ],
+106 silly audit   '@react-stately/color': [ '3.10.1' ],
+106 silly audit   '@react-stately/utils': [ '3.12.1' ],
+106 silly audit   '@react-types/color': [ '3.2.0' ],
+106 silly audit   '@react-types/shared': [ '3.36.1' ],
+106 silly audit   '@rolldown/binding-android-arm-eabi': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-android-arm64': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-darwin-arm64': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-darwin-x64': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-freebsd-x64': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-arm-gnueabihf': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-arm64-gnu': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-arm64-musl': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-ppc64-gnu': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-s390x-gnu': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-x64-gnu': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-linux-x64-musl': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-openharmony-arm64': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-win32-arm64-msvc': [ '1.2.5' ],
+106 silly audit   '@rolldown/binding-win32-x64-msvc': [ '1.2.5' ],
+106 silly audit   '@rolldown/pluginutils': [ '1.0.1' ],
+106 silly audit   '@sentry/browser': [ '10.70.0' ],
+106 silly audit   '@sentry/browser-utils': [ '10.70.0' ],
+106 silly audit   '@sentry/bundler-plugins': [ '10.70.0' ],
+106 silly audit   '@sentry/cli': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-darwin': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-linux-arm': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-linux-arm64': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-linux-i686': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-linux-x64': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-win32-arm64': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-win32-i686': [ '2.58.6' ],
+106 silly audit   '@sentry/cli-win32-x64': [ '2.58.6' ],
+106 silly audit   '@sentry/conventions': [ '0.16.0' ],
+106 silly audit   '@sentry/core': [ '10.70.0' ],
+106 silly audit   '@sentry/feedback': [ '10.70.0' ],
+106 silly audit   '@sentry/node': [ '10.70.0' ],
+106 silly audit   '@sentry/node-core': [ '10.70.0' ],
+106 silly audit   '@sentry/opentelemetry': [ '10.70.0' ],
+106 silly audit   '@sentry/react': [ '10.70.0' ],
+106 silly audit   '@sentry/replay': [ '10.70.0' ],
+106 silly audit   '@sentry/replay-canvas': [ '10.70.0' ],
+106 silly audit   '@sentry/server-utils': [ '10.70.0' ],
+106 silly audit   '@sentry/tanstackstart-react': [ '10.70.0' ],
+106 silly audit   '@sentry/vite-plugin': [ '5.4.0' ],
+106 silly audit   '@solid-primitives/event-listener': [ '2.4.6' ],
+106 silly audit   '@solid-primitives/keyboard': [ '1.3.7' ],
+106 silly audit   '@solid-primitives/resize-observer': [ '2.2.0' ],
+106 silly audit   '@solid-primitives/rootless': [ '1.5.4' ],
+106 silly audit   '@solid-primitives/static-store': [ '0.1.4' ],
+106 silly audit   '@solid-primitives/utils': [ '6.4.1' ],
+106 silly audit   '@spectrum-icons/ui': [ '3.7.1' ],
+106 silly audit   '@spectrum-icons/workflow': [ '4.3.1' ],
+106 silly audit   '@stablelib/base64': [ '1.0.1' ],
+106 silly audit   '@standard-schema/spec': [ '1.1.0' ],
+106 silly audit   '@standard-schema/utils': [ '0.3.0' ],
+106 silly audit   '@stylistic/eslint-plugin': [ '5.10.0' ],
+106 silly audit   '@swc/helpers': [ '0.5.23' ],
+106 silly audit   '@t3-oss/env-core': [ '0.13.11' ],
+106 silly audit   '@tailwindcss/node': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.3.3' ],
+106 silly audit   '@tailwindcss/typography': [ '0.5.20' ],
+106 silly audit   '@tailwindcss/vite': [ '4.3.3' ],
+106 silly audit   '@tanstack/devtools': [ '0.14.2' ],
+106 silly audit   '@tanstack/devtools-bundler-core': [ '0.1.3' ],
+106 silly audit   '@tanstack/devtools-client': [ '0.0.8' ],
+106 silly audit   '@tanstack/devtools-event-bus': [ '0.4.3' ],
+106 silly audit   '@tanstack/devtools-event-client': [ '0.5.0' ],
+106 silly audit   '@tanstack/devtools-ui': [ '0.7.1' ],
+106 silly audit   '@tanstack/devtools-vite': [ '0.8.5' ],
+106 silly audit   '@tanstack/eslint-config': [ '0.4.0' ],
+106 silly audit   '@tanstack/history': [ '1.162.1' ],
+106 silly audit   '@tanstack/query-core': [ '5.102.0' ],
+106 silly audit   '@tanstack/query-devtools': [ '5.102.0' ],
+106 silly audit   '@tanstack/react-devtools': [ '0.10.12' ],
+106 silly audit   '@tanstack/react-query': [ '5.102.0' ],
+106 silly audit   '@tanstack/react-query-devtools': [ '5.102.0' ],
+106 silly audit   '@tanstack/react-router': [ '1.170.31' ],
+106 silly audit   '@tanstack/react-router-devtools': [ '1.167.1' ],
+106 silly audit   '@tanstack/react-router-ssr-query': [ '1.167.1' ],
+106 silly audit   '@tanstack/react-start': [ '1.168.48' ],
+106 silly audit   '@tanstack/react-start-client': [ '1.168.29' ],
+106 silly audit   '@tanstack/react-start-rsc': [ '0.1.47' ],
+106 silly audit   '@tanstack/react-start-server': [ '1.167.36' ],
+106 silly audit   '@tanstack/react-store': [ '0.9.3' ],
+106 silly audit   '@tanstack/router-cli': [ '1.167.32' ],
+106 silly audit   '@tanstack/router-core': [ '1.171.26' ],
+106 silly audit   '@tanstack/router-devtools-core': [ '1.168.1' ],
+106 silly audit   '@tanstack/router-generator': [ '1.167.32' ],
+106 silly audit   '@tanstack/router-plugin': [ '1.168.34' ],
+106 silly audit   '@tanstack/router-ssr-query-core': [ '1.169.1' ],
+106 silly audit   '@tanstack/router-utils': [ '1.162.2' ],
+106 silly audit   '@tanstack/start-client-core': [ '1.170.26' ],
+106 silly audit   '@tanstack/start-fn-stubs': [ '1.162.0' ],
+106 silly audit   '@tanstack/start-plugin-core': [ '1.171.38' ],
+106 silly audit   'source-map': [ '0.7.6', '0.6.1' ],
+106 silly audit   '@tanstack/start-server-core': [ '1.169.30' ],
+106 silly audit   '@tanstack/start-storage-context': [ '1.167.28' ],
+106 silly audit   '@tanstack/store': [ '0.9.3' ],
+106 silly audit   '@tanstack/virtual-file-routes': [ '1.162.0' ],
+106 silly audit   '@testing-library/dom': [ '10.4.1' ],
+106 silly audit   '@testing-library/react': [ '16.3.2' ],
+106 silly audit   '@tybys/wasm-util': [ '0.10.3' ],
+106 silly audit   '@types/aria-query': [ '5.0.4' ],
+106 silly audit   '@types/chai': [ '5.2.3' ],
+106 silly audit   '@types/d3-array': [ '3.0.3' ],
+106 silly audit   '@types/d3-color': [ '3.1.0' ],
+106 silly audit   '@types/d3-delaunay': [ '6.0.1' ],
+106 silly audit   '@types/d3-format': [ '3.0.1' ],
+106 silly audit   '@types/d3-geo': [ '3.1.0' ],
+106 silly audit   '@types/d3-interpolate': [ '3.0.1' ],
+106 silly audit   '@types/d3-path': [ '3.1.1' ],
+106 silly audit   '@types/d3-scale': [ '4.0.2' ],
+106 silly audit   '@types/d3-shape': [ '3.1.7' ],
+106 silly audit   '@types/d3-time': [ '3.0.0' ],
+106 silly audit   '@types/d3-time-format': [ '2.1.0' ],
+106 silly audit   '@types/deep-eql': [ '4.0.2' ],
+106 silly audit   '@types/estree': [ '1.0.9' ],
+106 silly audit   '@types/geojson': [ '7946.0.16' ],
+106 silly audit   '@types/json-schema': [ '7.0.15' ],
+106 silly audit   '@types/lodash': [ '4.17.25' ],
+106 silly audit   '@types/node': [ '22.20.1' ],
+106 silly audit   '@types/pg': [ '8.23.1' ],
+106 silly audit   '@types/react': [ '19.2.18' ],
+106 silly audit   '@types/react-dom': [ '19.2.4' ],
+106 silly audit   '@typescript-eslint/eslint-plugin': [ '8.67.0' ],
+106 silly audit   ignore: [ '7.0.6', '5.3.2' ],
+106 silly audit   '@typescript-eslint/parser': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/project-service': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/scope-manager': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/tsconfig-utils': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/type-utils': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/types': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/typescript-estree': [ '8.67.0' ],
+106 silly audit   'balanced-match': [ '4.0.4', '1.0.2' ],
+106 silly audit   'brace-expansion': [ '5.0.9', '1.1.18' ],
+106 silly audit   minimatch: [ '10.2.6', '3.1.5' ],
+106 silly audit   semver: [ '7.8.5', '6.3.1' ],
+106 silly audit   '@typescript-eslint/utils': [ '8.67.0' ],
+106 silly audit   '@typescript-eslint/visitor-keys': [ '8.67.0' ],
+106 silly audit   '@unrs/resolver-binding-android-arm-eabi': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-android-arm64': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-darwin-arm64': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-darwin-x64': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-freebsd-x64': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-arm-gnueabihf': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-arm-musleabihf': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-arm64-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-arm64-musl': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-loong64-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-loong64-musl': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-ppc64-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-riscv64-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-riscv64-musl': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-s390x-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-x64-gnu': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-linux-x64-musl': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-openharmony-arm64': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-wasm32-wasi': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-win32-arm64-msvc': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-win32-ia32-msvc': [ '1.12.2' ],
+106 silly audit   '@unrs/resolver-binding-win32-x64-msvc': [ '1.12.2' ],
+106 silly audit   '@visx/curve': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/event': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/grid': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/group': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/point': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/responsive': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/scale': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/shape': [ '4.0.1-alpha.0' ],
+106 silly audit   '@visx/vendor': [ '4.0.0-alpha.0' ],
+106 silly audit   'd3-array': [ '3.2.1', '3.2.4' ],
+106 silly audit   '@vitejs/plugin-react': [ '6.1.0' ],
+106 silly audit   '@vitest/expect': [ '4.1.11' ],
+106 silly audit   '@vitest/mocker': [ '4.1.11' ],
+106 silly audit   '@vitest/pretty-format': [ '4.1.11' ],
+106 silly audit   '@vitest/runner': [ '4.1.11' ],
+106 silly audit   '@vitest/snapshot': [ '4.1.11' ],
+106 silly audit   '@vitest/spy': [ '4.1.11' ],
+106 silly audit   '@vitest/utils': [ '4.1.11' ],
+106 silly audit   acorn: [ '8.18.0' ],
+106 silly audit   'acorn-jsx': [ '5.3.2' ],
+106 silly audit   'agent-base': [ '6.0.2', '7.1.4' ],
+106 silly audit   'ansi-regex': [ '5.0.1' ],
+106 silly audit   'ansi-styles': [ '5.2.0', '4.3.0' ],
+106 silly audit   ansis: [ '4.3.1' ],
+106 silly audit   argparse: [ '2.0.1' ],
+106 silly audit   'aria-hidden': [ '1.2.6' ],
+106 silly audit   'aria-query': [ '5.3.0' ],
+106 silly audit   'assertion-error': [ '2.0.1' ],
+106 silly audit   astring: [ '1.9.0' ],
+106 silly audit   'aws-ssl-profiles': [ '1.1.2' ],
+106 silly audit   'babel-dead-code-elimination': [ '1.0.12' ],
+106 silly audit   'baseline-browser-mapping': [ '2.11.18' ],
+106 silly audit   'better-auth': [ '1.7.1' ],
+106 silly audit   'better-call': [ '1.4.0' ],
+106 silly audit   rou3: [ '0.9.2', '0.8.1', '0.7.12' ],
+106 silly audit   'better-result': [ '2.10.0' ],
+106 silly audit   'bidi-js': [ '1.0.3' ],
+106 silly audit   browserslist: [ '4.28.8' ],
+106 silly audit   c12: [ '3.3.4' ],
+106 silly audit   callsites: [ '3.1.0' ],
+106 silly audit   'caniuse-lite': [ '1.0.30001809' ],
+106 silly audit   chai: [ '6.2.2' ],
+106 silly audit   chalk: [ '5.6.2', '4.1.2' ],
+106 silly audit   chokidar: [ '5.0.0' ],
+106 silly audit   'cjs-module-lexer': [ '2.2.1' ],
+106 silly audit   classnames: [ '2.5.1' ],
+106 silly audit   'client-only': [ '0.0.1' ],
+106 silly audit   cliui: [ '8.0.1' ],
+106 silly audit   clsx: [ '2.1.1' ],
+106 silly audit   'color-convert': [ '2.0.1' ],
+106 silly audit   'color-name': [ '1.1.4' ],
+106 silly audit   'comment-parser': [ '1.4.8' ],
+106 silly audit   'concat-map': [ '0.0.1' ],
+106 silly audit   confbox: [ '0.2.4' ],
+106 silly audit   'convert-source-map': [ '2.0.0' ],
+106 silly audit   cookie: [ '1.1.1' ],
+106 silly audit   'cookie-es': [ '3.1.1' ],
+106 silly audit   'cross-spawn': [ '7.0.6' ],
+106 silly audit   'css-tree': [ '3.2.1' ],
+106 silly audit   cssesc: [ '3.0.0' ],
+106 silly audit   cssstyle: [ '6.2.0' ],
+106 silly audit   csstype: [ '3.2.3' ],
+106 silly audit   'd3-color': [ '3.1.0' ],
+106 silly audit   'd3-delaunay': [ '6.0.2' ],
+106 silly audit   'd3-format': [ '3.1.0' ],
+106 silly audit   'd3-geo': [ '3.1.0' ],
+106 silly audit   'd3-interpolate': [ '3.0.1' ],
+106 silly audit   'd3-path': [ '3.1.0' ],
+106 silly audit   'd3-scale': [ '4.0.2' ],
+106 silly audit   'd3-shape': [ '3.2.0' ],
+106 silly audit   'd3-time': [ '3.1.0' ],
+106 silly audit   'd3-time-format': [ '4.1.0' ],
+106 silly audit   'data-urls': [ '7.0.0' ],
+106 silly audit   dayjs: [ '1.11.23' ],
+106 silly audit   debug: [ '4.4.3' ],
+106 silly audit   'decimal.js': [ '10.6.0' ],
+106 silly audit   'deep-is': [ '0.1.4' ],
+106 silly audit   'deepmerge-ts': [ '7.1.5' ],
+106 silly audit   defu: [ '6.1.7' ],
+106 silly audit   delaunator: [ '5.1.0' ],
+106 silly audit   denque: [ '2.1.0' ],
+106 silly audit   dequal: [ '2.0.3' ],
+106 silly audit   destr: [ '2.0.5' ],
+106 silly audit   'detect-libc': [ '2.1.2' ],
+106 silly audit   diff: [ '8.0.4' ],
+106 silly audit   dodopayments: [ '2.44.0' ],
+106 silly audit   'dom-accessibility-api': [ '0.5.16' ],
+106 silly audit   'dom-helpers': [ '5.2.1' ],
+106 silly audit   dotenv: [ '17.4.2', '16.6.1' ],
+106 silly audit   'dotenv-cli': [ '11.0.0' ],
+106 silly audit   'dotenv-expand': [ '12.0.3' ],
+106 silly audit   effect: [ '3.20.0' ],
+106 silly audit   'electron-to-chromium': [ '1.5.412' ],
+106 silly audit   elkjs: [ '0.11.1' ],
+106 silly audit   'emoji-regex': [ '8.0.0' ],
+106 silly audit   empathic: [ '2.0.0' ],
+106 silly audit   'enhanced-resolve': [ '5.24.5' ],
+106 silly audit   entities: [ '8.0.0' ],
+106 silly audit   'env-paths': [ '3.0.0' ],
+106 silly audit   'es-module-lexer': [ '2.3.2' ],
+106 silly audit   esbuild: [ '0.28.2' ],
+106 silly audit   escalade: [ '3.2.0' ],
+106 silly audit   'escape-string-regexp': [ '5.0.0', '4.0.0' ],
+106 silly audit   eslint: [ '9.39.5' ],
+106 silly audit   'eslint-compat-utils': [ '0.5.1' ],
+106 silly audit   'eslint-import-context': [ '0.1.9' ],
+106 silly audit   'eslint-plugin-es-x': [ '7.8.0' ],
+106 silly audit   'eslint-plugin-import-x': [ '4.17.1' ],
+106 silly audit   'eslint-plugin-n': [ '17.24.0' ],
+106 silly audit   'eslint-scope': [ '8.4.0' ],
+106 silly audit   espree: [ '10.4.0' ],
+106 silly audit   esquery: [ '1.7.0' ],
+106 silly audit   esrecurse: [ '4.3.0' ],
+106 silly audit   estraverse: [ '5.3.0' ],
+106 silly audit   'estree-walker': [ '3.0.3' ],
+106 silly audit   esutils: [ '2.0.3' ],
+106 silly audit   'expect-type': [ '1.4.0' ],
+106 silly audit   exsolve: [ '1.1.1' ],
+106 silly audit   'fast-check': [ '3.23.2' ],
+106 silly audit   'fast-decode-uri-component': [ '1.0.1' ],
+106 silly audit   'fast-deep-equal': [ '3.1.3' ],
+106 silly audit   'fast-json-stable-stringify': [ '2.1.0' ],
+106 silly audit   'fast-levenshtein': [ '2.0.6' ],
+106 silly audit   'fast-querystring': [ '1.1.2' ],
+106 silly audit   'fast-sha256': [ '1.3.0' ],
+106 silly audit   'fast-uri': [ '3.1.5' ],
+106 silly audit   fdir: [ '6.5.0' ],
+106 silly audit   fetchdts: [ '0.1.7' ],
+106 silly audit   'file-entry-cache': [ '8.0.0' ],
+106 silly audit   'find-my-way': [ '9.7.0' ],
+106 silly audit   'find-up': [ '5.0.0' ],
+106 silly audit   'flat-cache': [ '4.0.1' ],
+106 silly audit   flatted: [ '3.4.4' ],
+106 silly audit   'foreground-child': [ '3.3.1' ],
+106 silly audit   fsevents: [ '2.3.3' ],
+106 silly audit   'generate-function': [ '2.3.1' ],
+106 silly audit   gensync: [ '1.0.0-beta.2' ],
+106 silly audit   'get-caller-file': [ '2.0.5' ],
+106 silly audit   'get-port-please': [ '3.2.0' ],
+106 silly audit   'get-tsconfig': [ '4.14.3' ],
+106 silly audit   giget: [ '3.3.1' ],
+106 silly audit   glob: [ '13.0.6' ],
+106 silly audit   'glob-parent': [ '6.0.2' ],
+106 silly audit   globrex: [ '0.1.2' ],
+106 silly audit   goober: [ '2.1.19' ],
+106 silly audit   'graceful-fs': [ '4.2.11' ],
+106 silly audit   grammex: [ '3.1.13' ],
+106 silly audit   graphmatch: [ '1.1.1' ],
+106 silly audit   h3: [ '2.0.1-rc.20' ],
+106 silly audit   'has-flag': [ '4.0.0' ],
+106 silly audit   'html-encoding-sniffer': [ '6.0.0' ],
+106 silly audit   'http-proxy-agent': [ '7.0.2' ],
+106 silly audit   'https-proxy-agent': [ '5.0.1', '7.0.6' ],
+106 silly audit   'iconv-lite': [ '0.7.3' ],
+106 silly audit   'import-fresh': [ '3.3.1' ],
+106 silly audit   'import-in-the-middle': [ '3.3.3' ],
+106 silly audit   imurmurhash: [ '0.1.4' ],
+106 silly audit   'input-otp': [ '1.4.2' ],
+106 silly audit   internmap: [ '2.0.3' ],
+106 silly audit   'is-extglob': [ '2.1.1' ],
+106 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+106 silly audit   'is-glob': [ '4.0.3' ],
+106 silly audit   'is-potential-custom-element-name': [ '1.0.1' ],
+106 silly audit   'is-property': [ '1.0.2' ],
+106 silly audit   isbot: [ '5.2.1' ],
+106 silly audit   isexe: [ '2.0.0' ],
+106 silly audit   jiti: [ '2.7.0' ],
+106 silly audit   jose: [ '6.2.10' ],
+106 silly audit   'js-tokens': [ '4.0.0' ],
+106 silly audit   'js-yaml': [ '4.3.1' ],
+106 silly audit   jsdom: [ '28.1.0' ],
+106 silly audit   jsesc: [ '3.1.0' ],
+106 silly audit   'json-buffer': [ '3.0.1' ],
+106 silly audit   'json-schema-typed': [ '8.0.2' ],
+106 silly audit   'json-stable-stringify-without-jsonify': [ '1.0.1' ],
+106 silly audit   json5: [ '2.2.3' ],
+106 silly audit   keyv: [ '4.5.4' ],
+106 silly audit   kysely: [ '0.29.5' ],
+106 silly audit   'launch-editor': [ '2.14.1' ],
+106 silly audit   levn: [ '0.4.1' ],
+106 silly audit   lightningcss: [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-android-arm64': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-darwin-arm64': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-darwin-x64': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-freebsd-x64': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0', '1.33.0' ],
+106 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0', '1.33.0' ],
+106 silly audit   'locate-path': [ '6.0.0' ],
+106 silly audit   lodash: [ '4.18.1' ],
+106 silly audit   'lodash.merge': [ '4.6.2' ],
+106 silly audit   long: [ '5.3.2' ],
+106 silly audit   'loose-envify': [ '1.4.0' ],
+106 silly audit   'lru.min': [ '1.1.4' ],
+106 silly audit   'lucide-react': [ '0.545.0' ],
+106 silly audit   'lz-string': [ '1.5.0' ],
+106 silly audit   'magic-string': [ '0.30.21' ],
+106 silly audit   'mdn-data': [ '2.27.1' ],
+106 silly audit   meriyah: [ '6.1.4' ],
+106 silly audit   minimist: [ '1.2.8' ],
+106 silly audit   minipass: [ '7.1.3' ],
+106 silly audit   'module-details-from-path': [ '1.0.4' ],
+106 silly audit   ms: [ '2.1.3' ],
+106 silly audit   mysql2: [ '3.15.3' ],
+106 silly audit   'named-placeholders': [ '1.1.6' ],
+106 silly audit   nanoid: [ '3.3.18' ],
+106 silly audit   nanostores: [ '1.5.2' ],
+106 silly audit   'napi-postinstall': [ '0.3.4' ],
+106 silly audit   'natural-compare': [ '1.4.0' ],
+106 silly audit   'node-fetch': [ '2.7.0' ],
+106 silly audit   tr46: [ '0.0.3', '6.0.0' ],
+106 silly audit   'webidl-conversions': [ '3.0.1', '8.0.1' ],
+106 silly audit   'whatwg-url': [ '5.0.0', '16.0.1' ],
+106 silly audit   'node-releases': [ '2.0.53' ],
+106 silly audit   'object-assign': [ '4.1.1' ],
+106 silly audit   obug: [ '2.1.4' ],
+106 silly audit   ohash: [ '2.0.12' ],
+106 silly audit   'openapi-types': [ '12.1.3' ],
+106 silly audit   optionator: [ '0.9.4' ],
+106 silly audit   'oxc-parser': [ '0.120.0' ],
+106 silly audit   'p-limit': [ '3.1.0' ],
+106 silly audit   'p-locate': [ '5.0.0' ],
+106 silly audit   'parent-module': [ '1.0.1' ],
+106 silly audit   parse5: [ '8.0.1' ],
+106 silly audit   'path-exists': [ '4.0.0' ],
+106 silly audit   'path-key': [ '3.1.1' ],
+106 silly audit   'path-scurry': [ '2.0.2' ],
+106 silly audit   pathe: [ '2.0.3' ],
+106 silly audit   'perfect-debounce': [ '2.1.0' ],
+106 silly audit   pg: [ '8.23.0' ],
+106 silly audit   'pg-cloudflare': [ '1.4.0' ],
+106 silly audit   'pg-connection-string': [ '2.14.0' ],
+106 silly audit   'pg-int8': [ '1.0.1' ],
+106 silly audit   'pg-pool': [ '3.14.0' ],
+106 silly audit   'pg-protocol': [ '1.16.0' ],
+106 silly audit   'pg-types': [ '2.2.0' ],
+106 silly audit   'postgres-array': [ '2.0.0', '3.0.4' ],
+106 silly audit   pgpass: [ '1.0.5' ],
+106 silly audit   picocolors: [ '1.1.1' ],
+106 silly audit   picomatch: [ '4.0.5' ],
+106 silly audit   'pkg-types': [ '2.3.1' ],
+106 silly audit   'postal-mime': [ '2.7.4' ],
+106 silly audit   postcss: [ '8.5.26' ],
+106 silly audit   'postcss-selector-parser': [ '6.0.10' ],
+106 silly audit   postgres: [ '3.4.7' ],
+106 silly audit   'postgres-bytea': [ '1.0.1' ],
+106 silly audit   'postgres-date': [ '1.0.7' ],
+106 silly audit   'postgres-interval': [ '1.2.0' ],
+106 silly audit   'prelude-ls': [ '1.2.1' ],
+106 silly audit   prettier: [ '3.9.6' ],
+106 silly audit   'pretty-format': [ '27.5.1' ],
+106 silly audit   prisma: [ '7.9.1' ],
+106 silly audit   progress: [ '2.0.3' ],
+106 silly audit   'prop-types': [ '15.8.1' ],
+106 silly audit   'react-is': [ '16.13.1', '17.0.2' ],
+106 silly audit   'proper-lockfile': [ '4.1.2' ],
+106 silly audit   'signal-exit': [ '3.0.7', '4.1.0' ],
+106 silly audit   'proxy-from-env': [ '1.1.0' ],
+106 silly audit   punycode: [ '2.3.1' ],
+106 silly audit   'pure-rand': [ '6.1.0' ],
+106 silly audit   radash: [ '12.1.1' ],
+106 silly audit   rc9: [ '3.0.1' ],
+106 silly audit   react: [ '19.2.8' ],
+106 silly audit   'react-aria': [ '3.51.0' ],
+106 silly audit   'react-aria-components': [ '1.20.0' ],
+106 silly audit   'react-dom': [ '19.2.8' ],
+106 silly audit   'react-hook-form': [ '7.79.0' ],
+106 silly audit   'react-icons': [ '5.6.0' ],
+106 silly audit   'react-stately': [ '3.49.0' ],
+106 silly audit   'react-transition-group': [ '4.4.5' ],
+106 silly audit   readdirp: [ '5.1.1' ],
+106 silly audit   remeda: [ '2.33.4' ],
+106 silly audit   'require-directory': [ '2.1.1' ],
+106 silly audit   'require-from-string': [ '2.0.2' ],
+106 silly audit   'require-in-the-middle': [ '8.0.1' ],
+106 silly audit   resend: [ '6.13.0' ],
+106 silly audit   'resolve-from': [ '4.0.0' ],
+106 silly audit   'resolve-pkg-maps': [ '1.0.0' ],
+106 silly audit   ret: [ '0.5.0' ],
+106 silly audit   retry: [ '0.12.0' ],
+106 silly audit   'robust-predicates': [ '3.0.3' ],
+106 silly audit   rolldown: [ '1.2.5' ],
+106 silly audit   'safe-regex2': [ '5.1.1' ],
+106 silly audit   'safer-buffer': [ '2.1.2' ],
+106 silly audit   saxes: [ '6.0.0' ],
+106 silly audit   scheduler: [ '0.27.0' ],
+106 silly audit   semifies: [ '1.0.0' ],
+106 silly audit   'seq-queue': [ '0.0.5' ],
+106 silly audit   seroval: [ '1.6.3', '1.5.6' ],
+106 silly audit   'seroval-plugins': [ '1.6.3', '1.5.6' ],
+106 silly audit   'set-cookie-parser': [ '3.1.2' ],
+106 silly audit   'shebang-command': [ '2.0.0' ],
+106 silly audit   'shebang-regex': [ '3.0.0' ],
+106 silly audit   'shell-quote': [ '1.10.0' ],
+106 silly audit   siginfo: [ '2.0.0' ],
+106 silly audit   'solid-js': [ '1.9.15' ],
+106 silly audit   'source-map-js': [ '1.2.1' ],
+106 silly audit   split2: [ '4.2.0' ],
+106 silly audit   sqlstring: [ '2.3.3' ],
+106 silly audit   srvx: [ '0.11.22' ],
+106 silly audit   'stable-hash-x': [ '0.2.0' ],
+106 silly audit   stackback: [ '0.0.2' ],
+106 silly audit   standardwebhooks: [ '1.0.0' ],
+106 silly audit   'std-env': [ '3.10.0', '4.2.0' ],
+106 silly audit   'string-width': [ '4.2.3' ],
+106 silly audit   'strip-ansi': [ '6.0.1' ],
+106 silly audit   'strip-json-comments': [ '3.1.1' ],
+106 silly audit   'supports-color': [ '7.2.0' ],
+106 silly audit   'symbol-tree': [ '3.2.4' ],
+106 silly audit   'tagged-tag': [ '1.0.0' ],
+106 silly audit   'tailwind-merge': [ '3.4.0' ],
+106 silly audit   'tailwind-variants': [ '3.3.1' ],
+106 silly audit   tailwindcss: [ '4.3.3' ],
+106 silly audit   tapable: [ '2.3.3' ],
+106 silly audit   tinybench: [ '2.9.0' ],
+106 silly audit   tinyexec: [ '1.3.0' ],
+106 silly audit   tinyglobby: [ '0.2.17' ],
+106 silly audit   tinyrainbow: [ '3.1.1' ],
+106 silly audit   tldts: [ '7.4.10' ],
+106 silly audit   'tldts-core': [ '7.4.10' ],
+106 silly audit   'tough-cookie': [ '6.0.2' ],
+106 silly audit   'ts-api-utils': [ '2.5.0' ],
+106 silly audit   'ts-declaration-location': [ '1.0.7' ],
+106 silly audit   tslib: [ '2.8.1' ],
+106 silly audit   tsx: [ '4.23.12' ],
+106 silly audit   'tw-animate-css': [ '1.4.0' ],
+106 silly audit   'type-check': [ '0.4.0' ],
+106 silly audit   'type-fest': [ '5.8.0' ],
+106 silly audit   typescript: [ '6.0.3' ],
+106 silly audit   'typescript-eslint': [ '8.67.0' ],
+106 silly audit   ufo: [ '1.6.4' ],
+106 silly audit   undici: [ '7.29.0' ],
+106 silly audit   'undici-types': [ '6.21.0' ],
+106 silly audit   unplugin: [ '3.3.0' ],
+106 silly audit   'unrs-resolver': [ '1.12.2' ],
+106 silly audit   'update-browserslist-db': [ '1.3.1' ],
+106 silly audit   'uri-js': [ '4.4.1' ],
+106 silly audit   'use-sync-external-store': [ '1.6.0' ],
+106 silly audit   'util-deprecate': [ '1.0.2' ],
+106 silly audit   valibot: [ '1.4.2' ],
+106 silly audit   vite: [ '8.2.2' ],
+106 silly audit   vitefu: [ '1.1.3' ],
+106 silly audit   vitest: [ '4.1.11' ],
+106 silly audit   'vue-eslint-parser': [ '10.4.1' ],
+106 silly audit   'w3c-xmlserializer': [ '5.0.0' ],
+106 silly audit   'webpack-virtual-modules': [ '0.6.2' ],
+106 silly audit   'whatwg-mimetype': [ '5.0.0' ],
+106 silly audit   which: [ '2.0.2' ],
+106 silly audit   'why-is-node-running': [ '2.3.0' ],
+106 silly audit   'wildcard-match': [ '5.1.4' ],
+106 silly audit   'word-wrap': [ '1.2.5' ],
+106 silly audit   'wrap-ansi': [ '7.0.0' ],
+106 silly audit   ws: [ '8.21.3' ],
+106 silly audit   'xml-name-validator': [ '5.0.0' ],
+106 silly audit   xmlbuilder2: [ '4.0.3' ],
+106 silly audit   xmlchars: [ '2.2.0' ],
+106 silly audit   xtend: [ '4.0.2' ],
+106 silly audit   y18n: [ '5.0.8' ],
+106 silly audit   yallist: [ '3.1.1' ],
+106 silly audit   yargs: [ '17.7.3' ],
+106 silly audit   'yargs-parser': [ '21.1.1' ],
+106 silly audit   'yocto-queue': [ '0.1.0' ],
+106 silly audit   zeptomatch: [ '2.1.0' ],
+106 silly audit   zod: [ '4.4.3' ],
+106 silly audit   '@react-aria/utils': [ '3.34.1' ],
+106 silly audit   '@react-aria/i18n': [ '3.13.1' ],
+106 silly audit   '@react-aria/ssr': [ '3.10.1' ],
+106 silly audit   '@internationalized/message': [ '3.1.10' ],
+106 silly audit   'intl-messageformat': [ '10.7.18' ],
+106 silly audit   '@react-spectrum/provider': [ '3.11.1' ],
+106 silly audit   '@formatjs/ecma402-abstract': [ '2.3.6' ],
+106 silly audit   '@formatjs/fast-memoize': [ '2.2.7' ],
+106 silly audit   '@formatjs/icu-messageformat-parser': [ '2.11.4' ],
+106 silly audit   '@formatjs/intl-localematcher': [ '0.6.2' ],
+106 silly audit   '@formatjs/icu-skeleton-parser': [ '1.8.16' ],
+106 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.3.3' ]
+106 silly audit }
+107 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-win32-x64-msvc
+108 silly reify mark deleted [
+108 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-win32-x64-msvc'
+108 silly reify ]
+109 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-win32-arm64-msvc
+110 silly reify mark deleted [
+110 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-win32-arm64-msvc'
+110 silly reify ]
+111 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm64-musl
+112 silly reify mark deleted [
+112 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm64-musl'
+112 silly reify ]
+113 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm64-gnu
+114 silly reify mark deleted [
+114 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm64-gnu'
+114 silly reify ]
+115 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm-gnueabihf
+116 silly reify mark deleted [
+116 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-linux-arm-gnueabihf'
+116 silly reify ]
+117 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-freebsd-x64
+118 silly reify mark deleted [
+118 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-freebsd-x64'
+118 silly reify ]
+119 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-darwin-x64
+120 silly reify mark deleted [
+120 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-darwin-x64'
+120 silly reify ]
+121 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-darwin-arm64
+122 silly reify mark deleted [
+122 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-darwin-arm64'
+122 silly reify ]
+123 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-android-arm64
+124 silly reify mark deleted [
+124 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/lightningcss-android-arm64'
+124 silly reify ]
+125 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/fsevents
+126 silly reify mark deleted [
+126 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/fsevents'
+126 silly reify ]
+127 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-x64-msvc
+128 silly reify mark deleted [
+128 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-x64-msvc'
+128 silly reify ]
+129 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-ia32-msvc
+130 silly reify mark deleted [
+130 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-ia32-msvc'
+130 silly reify ]
+131 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-arm64-msvc
+132 silly reify mark deleted [
+132 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-win32-arm64-msvc'
+132 silly reify ]
+133 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi
+134 silly reify mark deleted [
+134 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi'
+134 silly reify ]
+135 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/core
+136 silly reify mark deleted [
+136 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/core'
+136 silly reify ]
+137 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/runtime
+138 silly reify mark deleted [
+138 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/runtime'
+138 silly reify ]
+139 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/wasi-threads
+140 silly reify mark deleted [
+140 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/wasi-threads'
+140 silly reify ]
+141 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-openharmony-arm64
+142 silly reify mark deleted [
+142 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-openharmony-arm64'
+142 silly reify ]
+143 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-s390x-gnu
+144 silly reify mark deleted [
+144 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-s390x-gnu'
+144 silly reify ]
+145 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-riscv64-musl
+146 silly reify mark deleted [
+146 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-riscv64-musl'
+146 silly reify ]
+147 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-riscv64-gnu
+148 silly reify mark deleted [
+148 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-riscv64-gnu'
+148 silly reify ]
+149 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-ppc64-gnu
+150 silly reify mark deleted [
+150 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-ppc64-gnu'
+150 silly reify ]
+151 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-loong64-musl
+152 silly reify mark deleted [
+152 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-loong64-musl'
+152 silly reify ]
+153 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-loong64-gnu
+154 silly reify mark deleted [
+154 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-loong64-gnu'
+154 silly reify ]
+155 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm64-musl
+156 silly reify mark deleted [
+156 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm64-musl'
+156 silly reify ]
+157 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm64-gnu
+158 silly reify mark deleted [
+158 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm64-gnu'
+158 silly reify ]
+159 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm-musleabihf
+160 silly reify mark deleted [
+160 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm-musleabihf'
+160 silly reify ]
+161 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf
+162 silly reify mark deleted [
+162 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf'
+162 silly reify ]
+163 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-freebsd-x64
+164 silly reify mark deleted [
+164 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-freebsd-x64'
+164 silly reify ]
+165 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-darwin-x64
+166 silly reify mark deleted [
+166 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-darwin-x64'
+166 silly reify ]
+167 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-darwin-arm64
+168 silly reify mark deleted [
+168 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-darwin-arm64'
+168 silly reify ]
+169 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-android-arm64
+170 silly reify mark deleted [
+170 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-android-arm64'
+170 silly reify ]
+171 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-android-arm-eabi
+172 silly reify mark deleted [
+172 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@unrs/resolver-binding-android-arm-eabi'
+172 silly reify ]
+173 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-win32-x64-msvc
+174 silly reify mark deleted [
+174 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-win32-x64-msvc'
+174 silly reify ]
+175 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+176 silly reify mark deleted [
+176 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-win32-arm64-msvc'
+176 silly reify ]
+177 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm64-musl
+178 silly reify mark deleted [
+178 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm64-musl'
+178 silly reify ]
+179 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm64-gnu
+180 silly reify mark deleted [
+180 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm64-gnu'
+180 silly reify ]
+181 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+182 silly reify mark deleted [
+182 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+182 silly reify ]
+183 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-freebsd-x64
+184 silly reify mark deleted [
+184 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-freebsd-x64'
+184 silly reify ]
+185 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-darwin-x64
+186 silly reify mark deleted [
+186 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-darwin-x64'
+186 silly reify ]
+187 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-darwin-arm64
+188 silly reify mark deleted [
+188 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-darwin-arm64'
+188 silly reify ]
+189 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-android-arm64
+190 silly reify mark deleted [
+190 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@tailwindcss/oxide-android-arm64'
+190 silly reify ]
+191 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-x64
+192 silly reify mark deleted [
+192 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-x64'
+192 silly reify ]
+193 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-i686
+194 silly reify mark deleted [
+194 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-i686'
+194 silly reify ]
+195 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-arm64
+196 silly reify mark deleted [
+196 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-win32-arm64'
+196 silly reify ]
+197 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-i686
+198 silly reify mark deleted [
+198 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-i686'
+198 silly reify ]
+199 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-arm64
+200 silly reify mark deleted [
+200 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-arm64'
+200 silly reify ]
+201 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-arm
+202 silly reify mark deleted [
+202 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-linux-arm'
+202 silly reify ]
+203 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-darwin
+204 silly reify mark deleted [
+204 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@sentry/cli-darwin'
+204 silly reify ]
+205 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-win32-x64-msvc
+206 silly reify mark deleted [
+206 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-win32-x64-msvc'
+206 silly reify ]
+207 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-win32-arm64-msvc
+208 silly reify mark deleted [
+208 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-win32-arm64-msvc'
+208 silly reify ]
+209 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-openharmony-arm64
+210 silly reify mark deleted [
+210 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-openharmony-arm64'
+210 silly reify ]
+211 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-s390x-gnu
+212 silly reify mark deleted [
+212 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-s390x-gnu'
+212 silly reify ]
+213 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-ppc64-gnu
+214 silly reify mark deleted [
+214 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-ppc64-gnu'
+214 silly reify ]
+215 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm64-musl
+216 silly reify mark deleted [
+216 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm64-musl'
+216 silly reify ]
+217 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm64-gnu
+218 silly reify mark deleted [
+218 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm64-gnu'
+218 silly reify ]
+219 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm-gnueabihf
+220 silly reify mark deleted [
+220 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-linux-arm-gnueabihf'
+220 silly reify ]
+221 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-freebsd-x64
+222 silly reify mark deleted [
+222 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-freebsd-x64'
+222 silly reify ]
+223 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-darwin-x64
+224 silly reify mark deleted [
+224 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-darwin-x64'
+224 silly reify ]
+225 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-darwin-arm64
+226 silly reify mark deleted [
+226 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-darwin-arm64'
+226 silly reify ]
+227 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-android-arm64
+228 silly reify mark deleted [
+228 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-android-arm64'
+228 silly reify ]
+229 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-android-arm-eabi
+230 silly reify mark deleted [
+230 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@rolldown/binding-android-arm-eabi'
+230 silly reify ]
+231 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-x64-msvc
+232 silly reify mark deleted [
+232 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-x64-msvc'
+232 silly reify ]
+233 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-ia32-msvc
+234 silly reify mark deleted [
+234 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-ia32-msvc'
+234 silly reify ]
+235 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-arm64-msvc
+236 silly reify mark deleted [
+236 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-win32-arm64-msvc'
+236 silly reify ]
+237 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-wasm32-wasi
+238 silly reify mark deleted [
+238 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-wasm32-wasi'
+238 silly reify ]
+239 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-openharmony-arm64
+240 silly reify mark deleted [
+240 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-openharmony-arm64'
+240 silly reify ]
+241 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-s390x-gnu
+242 silly reify mark deleted [
+242 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-s390x-gnu'
+242 silly reify ]
+243 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-riscv64-musl
+244 silly reify mark deleted [
+244 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-riscv64-musl'
+244 silly reify ]
+245 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-riscv64-gnu
+246 silly reify mark deleted [
+246 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-riscv64-gnu'
+246 silly reify ]
+247 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-ppc64-gnu
+248 silly reify mark deleted [
+248 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-ppc64-gnu'
+248 silly reify ]
+249 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm64-musl
+250 silly reify mark deleted [
+250 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm64-musl'
+250 silly reify ]
+251 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm64-gnu
+252 silly reify mark deleted [
+252 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm64-gnu'
+252 silly reify ]
+253 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm-musleabihf
+254 silly reify mark deleted [
+254 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm-musleabihf'
+254 silly reify ]
+255 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm-gnueabihf
+256 silly reify mark deleted [
+256 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-linux-arm-gnueabihf'
+256 silly reify ]
+257 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-freebsd-x64
+258 silly reify mark deleted [
+258 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-freebsd-x64'
+258 silly reify ]
+259 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-darwin-x64
+260 silly reify mark deleted [
+260 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-darwin-x64'
+260 silly reify ]
+261 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-darwin-arm64
+262 silly reify mark deleted [
+262 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-darwin-arm64'
+262 silly reify ]
+263 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-android-arm64
+264 silly reify mark deleted [
+264 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-android-arm64'
+264 silly reify ]
+265 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-android-arm-eabi
+266 silly reify mark deleted [
+266 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@oxc-parser/binding-android-arm-eabi'
+266 silly reify ]
+267 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-x64
+268 silly reify mark deleted [
+268 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-x64'
+268 silly reify ]
+269 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-ia32
+270 silly reify mark deleted [
+270 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-ia32'
+270 silly reify ]
+271 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-arm64
+272 silly reify mark deleted [
+272 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/win32-arm64'
+272 silly reify ]
+273 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/sunos-x64
+274 silly reify mark deleted [
+274 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/sunos-x64'
+274 silly reify ]
+275 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openharmony-arm64
+276 silly reify mark deleted [
+276 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openharmony-arm64'
+276 silly reify ]
+277 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openbsd-x64
+278 silly reify mark deleted [
+278 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openbsd-x64'
+278 silly reify ]
+279 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openbsd-arm64
+280 silly reify mark deleted [
+280 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/openbsd-arm64'
+280 silly reify ]
+281 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/netbsd-x64
+282 silly reify mark deleted [
+282 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/netbsd-x64'
+282 silly reify ]
+283 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/netbsd-arm64
+284 silly reify mark deleted [
+284 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/netbsd-arm64'
+284 silly reify ]
+285 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-s390x
+286 silly reify mark deleted [
+286 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-s390x'
+286 silly reify ]
+287 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-riscv64
+288 silly reify mark deleted [
+288 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-riscv64'
+288 silly reify ]
+289 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-ppc64
+290 silly reify mark deleted [
+290 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-ppc64'
+290 silly reify ]
+291 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-mips64el
+292 silly reify mark deleted [
+292 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-mips64el'
+292 silly reify ]
+293 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-loong64
+294 silly reify mark deleted [
+294 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-loong64'
+294 silly reify ]
+295 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-ia32
+296 silly reify mark deleted [
+296 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-ia32'
+296 silly reify ]
+297 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-arm64
+298 silly reify mark deleted [
+298 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-arm64'
+298 silly reify ]
+299 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-arm
+300 silly reify mark deleted [
+300 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/linux-arm'
+300 silly reify ]
+301 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/freebsd-x64
+302 silly reify mark deleted [
+302 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/freebsd-x64'
+302 silly reify ]
+303 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/freebsd-arm64
+304 silly reify mark deleted [
+304 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/freebsd-arm64'
+304 silly reify ]
+305 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/darwin-x64
+306 silly reify mark deleted [
+306 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/darwin-x64'
+306 silly reify ]
+307 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/darwin-arm64
+308 silly reify mark deleted [
+308 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/darwin-arm64'
+308 silly reify ]
+309 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-x64
+310 silly reify mark deleted [
+310 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-x64'
+310 silly reify ]
+311 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-arm64
+312 silly reify mark deleted [
+312 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-arm64'
+312 silly reify ]
+313 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-arm
+314 silly reify mark deleted [
+314 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/android-arm'
+314 silly reify ]
+315 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/aix-ppc64
+316 silly reify mark deleted [
+316 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/@esbuild/aix-ppc64'
+316 silly reify ]
+317 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-win32-x64-msvc
+318 silly reify mark deleted [
+318 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-win32-x64-msvc'
+318 silly reify ]
+319 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-win32-arm64-msvc
+320 silly reify mark deleted [
+320 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-win32-arm64-msvc'
+320 silly reify ]
+321 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm64-musl
+322 silly reify mark deleted [
+322 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm64-musl'
+322 silly reify ]
+323 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm64-gnu
+324 silly reify mark deleted [
+324 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm64-gnu'
+324 silly reify ]
+325 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm-gnueabihf
+326 silly reify mark deleted [
+326 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-linux-arm-gnueabihf'
+326 silly reify ]
+327 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-freebsd-x64
+328 silly reify mark deleted [
+328 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-freebsd-x64'
+328 silly reify ]
+329 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-darwin-x64
+330 silly reify mark deleted [
+330 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-darwin-x64'
+330 silly reify ]
+331 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-darwin-arm64
+332 silly reify mark deleted [
+332 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-darwin-arm64'
+332 silly reify ]
+333 verbose reify failed optional dependency /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-android-arm64
+334 silly reify mark deleted [
+334 silly reify   '/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/node_modules/vite/node_modules/lightningcss-android-arm64'
+334 silly reify ]
+335 http cache @formatjs/icu-skeleton-parser@https://registry.npmjs.org/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.8.16.tgz 0ms (cache hit)
+336 http cache @formatjs/intl-localematcher@https://registry.npmjs.org/@formatjs/intl-localematcher/-/intl-localematcher-0.6.2.tgz 0ms (cache hit)
+337 http cache @formatjs/fast-memoize@https://registry.npmjs.org/@formatjs/fast-memoize/-/fast-memoize-2.2.7.tgz 0ms (cache hit)
+338 http cache @formatjs/icu-messageformat-parser@https://registry.npmjs.org/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.11.4.tgz 0ms (cache hit)
+339 http cache @formatjs/ecma402-abstract@https://registry.npmjs.org/@formatjs/ecma402-abstract/-/ecma402-abstract-2.3.6.tgz 1ms (cache hit)
+340 http cache @react-spectrum/provider@https://registry.npmjs.org/@react-spectrum/provider/-/provider-3.11.1.tgz 0ms (cache hit)
+341 http cache intl-messageformat@https://registry.npmjs.org/intl-messageformat/-/intl-messageformat-10.7.18.tgz 0ms (cache hit)
+342 http cache @internationalized/message@https://registry.npmjs.org/@internationalized/message/-/message-3.1.10.tgz 0ms (cache hit)
+343 http cache @react-aria/utils@https://registry.npmjs.org/@react-aria/utils/-/utils-3.34.1.tgz 0ms (cache hit)
+344 http cache @react-aria/i18n@https://registry.npmjs.org/@react-aria/i18n/-/i18n-3.13.1.tgz 0ms (cache hit)
+345 http cache @unrs/resolver-binding-linux-x64-musl@https://registry.npmjs.org/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.12.2.tgz 0ms (cache hit)
+346 http cache lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz 0ms (cache hit)
+347 http cache @tailwindcss/oxide-linux-x64-musl@https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.3.3.tgz 0ms (cache hit)
+348 http cache @rolldown/binding-linux-x64-musl@https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.5.tgz 0ms (cache hit)
+349 http cache @oxc-parser/binding-linux-x64-musl@https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.120.0.tgz 0ms (cache hit)
+350 http cache @react-aria/ssr@https://registry.npmjs.org/@react-aria/ssr/-/ssr-3.10.1.tgz 0ms (cache hit)
+351 http cache @emnapi/wasi-threads@https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-1.2.3.tgz 1ms (cache hit)
+352 http cache @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz 0ms (cache hit)
+353 http cache @emnapi/core@https://registry.npmjs.org/@emnapi/core/-/core-1.11.3.tgz 0ms (cache hit)
+354 http cache @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.10.0.tgz 0ms (cache hit)
+355 http cache @emnapi/core@https://registry.npmjs.org/@emnapi/core/-/core-1.10.0.tgz 0ms (cache hit)
+356 http cache lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz 1ms (cache hit)
+357 http cache @emnapi/wasi-threads@https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-1.2.1.tgz 0ms (cache hit)
+358 silly tarball no local data for @unrs/resolver-binding-linux-x64-musl@https://registry.npmjs.org/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.12.2.tgz. Extracting by manifest.
+359 silly tarball no local data for @tailwindcss/oxide-linux-x64-musl@https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.3.3.tgz. Extracting by manifest.
+360 silly tarball no local data for lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz. Extracting by manifest.
+361 silly tarball no local data for @oxc-parser/binding-linux-x64-musl@https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.120.0.tgz. Extracting by manifest.
+362 silly tarball no local data for @rolldown/binding-linux-x64-musl@https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.5.tgz. Extracting by manifest.
+363 silly tarball no local data for lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz. Extracting by manifest.
+364 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 432ms
+365 silly audit report {
+365 silly audit report   'deepmerge-ts': [
+365 silly audit report     {
+365 silly audit report       id: 1145093,
+365 silly audit report       url: 'https://github.com/advisories/GHSA-ggr8-5vv4-36mx',
+365 silly audit report       title: 'DeepmergeTS has stack exhaustion when merging recursive object graphs',
+365 silly audit report       severity: 'high',
+365 silly audit report       vulnerable_versions: '<8.0.0',
+365 silly audit report       cwe: [Array],
+365 silly audit report       cvss: [Object]
+365 silly audit report     }
+365 silly audit report   ]
+365 silly audit report }
+366 silly packumentCache corgi:https://registry.npmjs.org/deepmerge-ts cache-miss
+367 http cache https://registry.npmjs.org/deepmerge-ts 46ms (cache hit)
+368 silly packumentCache corgi:https://registry.npmjs.org/deepmerge-ts set size:183304 disposed:false
+369 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fconfig cache-miss
+370 http cache https://registry.npmjs.org/@prisma%2fconfig 33ms (cache hit)
+371 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fconfig set size:1515795 disposed:false
+372 silly packumentCache corgi:https://registry.npmjs.org/prisma cache-miss
+373 http fetch GET 200 https://registry.npmjs.org/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.12.2.tgz 530ms (cache miss)
+374 http cache https://registry.npmjs.org/prisma 8955ms (cache hit)
+375 silly packumentCache corgi:https://registry.npmjs.org/prisma set size:23105447 disposed:false
+376 silly packumentCache corgi:https://registry.npmjs.org/@better-auth%2fprisma-adapter cache-miss
+377 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fclient cache-miss
+378 silly packumentCache corgi:https://registry.npmjs.org/better-auth cache-miss
+379 http cache https://registry.npmjs.org/@better-auth%2fprisma-adapter 246ms (cache hit)
+380 silly packumentCache corgi:https://registry.npmjs.org/@better-auth%2fprisma-adapter set size:85018 disposed:false
+381 http cache https://registry.npmjs.org/better-auth 283ms (cache hit)
+382 silly packumentCache corgi:https://registry.npmjs.org/better-auth set size:1678845 disposed:false
+383 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.3.3.tgz 1706ms (cache miss)
+384 http fetch GET 200 https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.120.0.tgz 1885ms (cache miss)
+385 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz 5192ms (cache miss)
+386 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz 5197ms (cache miss)
+387 http fetch GET 200 https://registry.npmjs.org/@prisma%2fclient 4087ms (cache miss)
+388 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fclient set size:undefined disposed:false
+389 http fetch GET 200 https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.5.tgz 8057ms (cache miss)
+390 silly ADD node_modules/@formatjs/icu-skeleton-parser
+391 silly ADD node_modules/@formatjs/intl-localematcher
+392 silly ADD node_modules/@formatjs/icu-messageformat-parser
+393 silly ADD node_modules/@formatjs/fast-memoize
+394 silly ADD node_modules/@formatjs/ecma402-abstract
+395 silly ADD node_modules/@react-spectrum/provider
+396 silly ADD node_modules/intl-messageformat
+397 silly ADD node_modules/@internationalized/message
+398 silly ADD node_modules/@react-aria/ssr
+399 silly ADD node_modules/@react-aria/i18n
+400 silly ADD node_modules/@react-aria/utils
+401 silly ADD
+402 silly ADD
+403 silly ADD node_modules/lightningcss-linux-x64-musl
+404 silly ADD
+405 silly ADD
+406 silly ADD
+407 silly ADD
+408 silly ADD
+409 silly ADD
+410 silly ADD
+411 silly ADD
+412 silly ADD
+413 silly ADD
+414 silly ADD
+415 silly ADD
+416 silly ADD node_modules/@emnapi/wasi-threads
+417 silly ADD node_modules/@emnapi/runtime
+418 silly ADD node_modules/@emnapi/core
+419 silly ADD
+420 silly ADD node_modules/@unrs/resolver-binding-linux-x64-musl
+421 silly ADD
+422 silly ADD
+423 silly ADD
+424 silly ADD
+425 silly ADD
+426 silly ADD
+427 silly ADD
+428 silly ADD
+429 silly ADD
+430 silly ADD
+431 silly ADD
+432 silly ADD
+433 silly ADD
+434 silly ADD
+435 silly ADD
+436 silly ADD
+437 silly ADD
+438 silly ADD
+439 silly ADD node_modules/@tailwindcss/oxide-linux-x64-musl
+440 silly ADD
+441 silly ADD
+442 silly ADD
+443 silly ADD
+444 silly ADD
+445 silly ADD
+446 silly ADD
+447 silly ADD
+448 silly ADD
+449 silly ADD
+450 silly ADD
+451 silly ADD
+452 silly ADD
+453 silly ADD
+454 silly ADD
+455 silly ADD
+456 silly ADD
+457 silly ADD node_modules/@rolldown/binding-linux-x64-musl
+458 silly ADD
+459 silly ADD
+460 silly ADD
+461 silly ADD
+462 silly ADD
+463 silly ADD
+464 silly ADD
+465 silly ADD
+466 silly ADD
+467 silly ADD
+468 silly ADD
+469 silly ADD
+470 silly ADD
+471 silly ADD
+472 silly ADD
+473 silly ADD node_modules/@oxc-parser/binding-linux-x64-musl
+474 silly ADD
+475 silly ADD
+476 silly ADD
+477 silly ADD
+478 silly ADD
+479 silly ADD
+480 silly ADD
+481 silly ADD
+482 silly ADD
+483 silly ADD
+484 silly ADD
+485 silly ADD
+486 silly ADD
+487 silly ADD
+488 silly ADD
+489 silly ADD
+490 silly ADD
+491 silly ADD
+492 silly ADD
+493 silly ADD
+494 silly ADD
+495 silly ADD
+496 silly ADD
+497 silly ADD
+498 silly ADD
+499 silly ADD
+500 silly ADD
+501 silly ADD
+502 silly ADD
+503 silly ADD
+504 silly ADD
+505 silly ADD
+506 silly ADD
+507 silly ADD
+508 silly ADD
+509 silly ADD
+510 silly ADD
+511 silly ADD
+512 silly ADD node_modules/@emnapi/wasi-threads
+513 silly ADD node_modules/@emnapi/runtime
+514 silly ADD node_modules/@emnapi/core
+515 silly ADD
+516 silly ADD
+517 silly ADD node_modules/vite/node_modules/lightningcss-linux-x64-musl
+518 silly ADD
+519 silly ADD
+520 silly ADD
+521 silly ADD
+522 silly ADD
+523 silly ADD
+524 silly ADD
+525 verbose cwd /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v
+526 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+527 verbose node v22.22.0
+528 verbose npm  v10.9.4
+529 verbose exit 0
+530 info ok
