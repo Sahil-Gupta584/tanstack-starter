@@ -1,0 +1,19 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.4
+2 info using node@v22.22.0
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.npmrc
+5 silly config load:file:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm run build
+8 verbose argv "run" "build"
+9 verbose logfile logs-max:10 dir:/home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npm/_logs/2026-08-28T08_18_53_958Z-
+10 verbose logfile /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v/.home/.npm/_logs/2026-08-28T08_18_53_958Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 verbose cwd /home/gjugn/.local/share/trueforge/sandboxes/01m13pwnyffsvyyc9snj21949j/01m13pxq97ts3g094ykmjfff8v
+14 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+15 verbose node v22.22.0
+16 verbose npm  v10.9.4
+17 verbose exit 0
+18 info ok
