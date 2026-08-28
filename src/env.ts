@@ -1,5 +1,5 @@
-import { createEnv } from '@t3-oss/env-core'
-import { z } from 'zod'
+import { createEnv } from "@t3-oss/env-core"
+import { z } from "zod"
 
 export const env = createEnv({
   server: {
@@ -11,12 +11,12 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().min(1),
     DODO_PAYMENTS_API_KEY: z.string().optional(),
     DODO_PAYMENTS_WEBHOOK_KEY: z.string().optional(),
-    DODO_PAYMENTS_ENVIRONMENT: z.enum(['test_mode', 'live_mode']).default('test_mode'),
+    DODO_PAYMENTS_ENVIRONMENT: z.enum(["test_mode", "live_mode"]).default("test_mode"),
     SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
-    NODE_ENV: z.enum(['development', 'production', 'test']).optional(),
+    NODE_ENV: z.enum(["development", "production", "test"]).optional(),
   },
 
-  clientPrefix: 'VITE_',
+  clientPrefix: "VITE_",
 
   client: {
     VITE_SENTRY_DSN: z.string().url().optional(),
@@ -25,9 +25,31 @@ export const env = createEnv({
   },
 
   runtimeEnv: {
-    ...import.meta.env,
-    ...process.env,
+    DATABASE_URL: process.env.DATABASE_URL ?? import.meta.env?.DATABASE_URL,
+    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL ?? import.meta.env?.BETTER_AUTH_URL,
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET ?? import.meta.env?.BETTER_AUTH_SECRET,
+    RESEND_API_KEY: process.env.RESEND_API_KEY ?? import.meta.env?.RESEND_API_KEY,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID ?? import.meta.env?.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ?? import.meta.env?.GOOGLE_CLIENT_SECRET,
+    DODO_PAYMENTS_API_KEY: process.env.DODO_PAYMENTS_API_KEY ?? import.meta.env?.DODO_PAYMENTS_API_KEY,
+    DODO_PAYMENTS_WEBHOOK_KEY: process.env.DODO_PAYMENTS_WEBHOOK_KEY ?? import.meta.env?.DODO_PAYMENTS_WEBHOOK_KEY,
+    DODO_PAYMENTS_ENVIRONMENT: process.env.DODO_PAYMENTS_ENVIRONMENT ?? import.meta.env?.DODO_PAYMENTS_ENVIRONMENT,
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN ?? import.meta.env?.SENTRY_AUTH_TOKEN,
+    NODE_ENV: process.env.NODE_ENV ?? import.meta.env?.NODE_ENV,
+    VITE_SENTRY_DSN: process.env.VITE_SENTRY_DSN ?? import.meta.env?.VITE_SENTRY_DSN,
+    VITE_SENTRY_ORG: process.env.VITE_SENTRY_ORG ?? import.meta.env?.VITE_SENTRY_ORG,
+    VITE_SENTRY_PROJECT: process.env.VITE_SENTRY_PROJECT ?? import.meta.env?.VITE_SENTRY_PROJECT,
   },
 
   emptyStringAsUndefined: true,
 })
+
+try {
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  env.DATABASE_URL
+} catch (error) {
+  console.error("❌ Invalid environment variables during startup:", error)
+  if (process.env.NODE_ENV === "production") {
+    process.exit(1)
+  }
+}
