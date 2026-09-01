@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Card } from '@heroui/react'
+import { Card } from '#/components/ui/card'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
 import { orpc } from '#/orpc/client'

@@ -18,19 +18,17 @@ export const getSubscription = authed
   })
 
 // Get all plans (for pricing display — no product IDs needed client-side)
-export const getPlans = base
-  .input(z.void())
-  .handler(async () => {
-    return PLANS.map((p) => ({
-      id: p.id,
-      name: p.name,
-      tagline: p.tagline,
-      monthlyPrice: p.monthlyPrice,
-      annualPrice: p.annualPrice,
-      features: p.features,
-      popular: p.popular,
-    }))
-  })
+export const getPlans = base.input(z.void()).handler(async () => {
+  return PLANS.map((p) => ({
+    id: p.id,
+    name: p.name,
+    tagline: p.tagline,
+    monthlyPrice: p.monthlyPrice,
+    annualPrice: p.annualPrice,
+    features: p.features,
+    popular: p.popular,
+  }))
+})
 
 // Create a Dodo checkout session and return the hosted checkout URL
 export const createCheckout = authed
@@ -44,10 +42,15 @@ export const createCheckout = authed
   )
   .handler(async ({ input, context }) => {
     if (!env.DODO_PAYMENTS_API_KEY) {
-      throw new Error('Dodo Payments is not configured. Add DODO_PAYMENTS_API_KEY to .env.local')
+      throw new Error(
+        'Dodo Payments is not configured. Add DODO_PAYMENTS_API_KEY to .env.local',
+      )
     }
 
-    const productId = getDodoProductId(input.planId as PlanId, input.interval as BillingInterval)
+    const productId = getDodoProductId(
+      input.planId,
+      input.interval,
+    )
 
     const session = await dodo.checkoutSessions.create({
       product_cart: [{ product_id: productId, quantity: 1 }],

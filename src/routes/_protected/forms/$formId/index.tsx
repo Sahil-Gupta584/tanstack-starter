@@ -1,5 +1,7 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
-import { Card, Chip, Tooltip } from '@heroui/react'
+import { Card } from '#/components/ui/card'
+import { Badge as Chip } from '#/components/ui/badge'
+import { Tooltip } from '#/components/ui/tooltip'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'

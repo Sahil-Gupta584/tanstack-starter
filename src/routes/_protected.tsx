@@ -4,7 +4,8 @@ import {
   redirect,
   useRouter,
 } from '@tanstack/react-router'
-import { Avatar, Dropdown } from '@heroui/react'
+import { Avatar } from '#/components/ui/avatar'
+import { Dropdown } from '#/components/ui/dropdown-menu'
 import {
   RiDashboardLine,
   RiLogoutBoxLine,

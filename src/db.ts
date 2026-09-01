@@ -8,9 +8,8 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 })
 
-const adapter = new PrismaPg(pool,
-{  
-  schema:   new URL(env.DATABASE_URL).searchParams.get('schema') ?? 'public',
+const adapter = new PrismaPg(pool, {
+  schema: new URL(env.DATABASE_URL).searchParams.get('schema') ?? 'public',
 })
 
 declare global {

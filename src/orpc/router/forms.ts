@@ -11,17 +11,19 @@ const fieldSchema = z.object({
   options: z.array(z.string()).optional(),
 })
 
-export const listUserForms = authed.input(z.void()).handler(async ({ context }) => {
-  return prisma.form.findMany({
-    where: { userId: context.user.id },
-    orderBy: { createdAt: 'desc' },
-    include: {
-      _count: {
-        select: { submissions: true },
+export const listUserForms = authed
+  .input(z.void())
+  .handler(async ({ context }) => {
+    return prisma.form.findMany({
+      where: { userId: context.user.id },
+      orderBy: { createdAt: 'desc' },
+      include: {
+        _count: {
+          select: { submissions: true },
+        },
       },
-    },
+    })
   })
-})
 
 export const createForm = authed
   .input(

@@ -11,7 +11,9 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().min(1),
     DODO_PAYMENTS_API_KEY: z.string().optional(),
     DODO_PAYMENTS_WEBHOOK_KEY: z.string().optional(),
-    DODO_PAYMENTS_ENVIRONMENT: z.enum(['test_mode', 'live_mode']).default('test_mode'),
+    DODO_PAYMENTS_ENVIRONMENT: z
+      .enum(['test_mode', 'live_mode'])
+      .default('test_mode'),
     SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
     NODE_ENV: z.enum(['development', 'production', 'test']).optional(),
   },

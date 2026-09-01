@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Card, Separator } from '@heroui/react'
+import { Card } from '#/components/ui/card'
+import { Separator } from '#/components/ui/separator'
 import { useState } from 'react'
 import { authClient } from '#/lib/auth-client'
 import { Button } from '#/components/Button'

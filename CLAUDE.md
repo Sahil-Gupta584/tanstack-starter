@@ -2,7 +2,6 @@ CODEBASE OVERVIEW
 
 This is "driz", a full-stack web application built with TanStack Start (React SSR). The stack is TypeScript throughout. Package manager is npm.
 
-
 TECH STACK
 
 Framework: TanStack Start (Vite + React 19)
@@ -14,14 +13,12 @@ Payments: Dodo Payments (hosted checkout redirect + webhook signature verificati
 UI & Styling: HeroUI (@heroui/react) + Tailwind CSS v4. Icons: react-icons/ri.
 Forms: react-hook-form + @hookform/resolvers/zod.
 
-
 IMPORT ALIASES
 
 Both #/* and @/* resolve to ./src/*. Prefer #/ for all internal imports.
 Examples:
-  import { prisma } from '#/db'
-  import { env } from '#/env'
-
+import { prisma } from '#/db'
+import { env } from '#/env'
 
 AGENT INSTRUCTIONS & KEY CONVENTIONS
 
@@ -31,7 +28,6 @@ AGENT INSTRUCTIONS & KEY CONVENTIONS
 4. Env variables: Import env from '#/env' — never use process.env directly.
 5. UI Components: Check src/components/ first for wrappers (e.g. Button, Input, Select). If none exists, import directly from @heroui/react.
 6. Route file modularization: Keep route files focused and concise. Do not overcrowd a single route file by declaring multiple sub-components inline. If a route file exceeds ~500 lines, convert it to a folder (e.g. rename dashboard.tsx to dashboard/index.tsx) and extract page-specific sub-components or utilities into a local subfolder (e.g. dashboard/-components/button.tsx).
-
 
 COMMANDS
 

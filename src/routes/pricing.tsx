@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Card, Chip, Spinner } from '@heroui/react'
+import { Card } from '#/components/ui/card'
+import { Badge as Chip } from '#/components/ui/badge'
+import { Spinner } from '#/components/ui/spinner'
 import { useQuery } from '@tanstack/react-query'
 import { orpc } from '#/orpc/client'
 import { Button } from '#/components/Button'
