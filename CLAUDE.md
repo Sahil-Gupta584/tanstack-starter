@@ -7,7 +7,7 @@ TECH STACK
 Framework: TanStack Start (Vite + React 19)
 Router: TanStack Router (file-based at src/routes/). Never edit src/routeTree.gen.ts manually. Run npm run generate-routes after adding/renaming routes.
 Server API: oRPC with Zod validation (/api/rpc/* for RPC, /api/* for OpenAPI)
-Database: Prisma 7 with @prisma/adapter-pg against PostgreSQL. Client at src/generated/prisma.
+Database: Drizzle ORM + pg (PostgreSQL) with drizzle-kit. Schema at src/db/schema.ts. Client `db` at src/db.ts (re-exports `prisma` legacy until migration done).
 Auth: better-auth (magic link + Google OAuth). Client instance: #/lib/auth-client.
 Payments: Dodo Payments (hosted checkout redirect + webhook signature verification).
 UI & Styling: shadcn/ui (Radix primitives) + Tailwind CSS v4. Icons: react-icons/ri.
@@ -17,7 +17,7 @@ IMPORT ALIASES
 
 Both #/* and @/* resolve to ./src/*. Prefer #/ for all internal imports.
 Examples:
-import { prisma } from '#/db'
+import { db } from '#/db'
 import { env } from '#/env'
 
 AGENT INSTRUCTIONS & KEY CONVENTIONS
@@ -33,8 +33,8 @@ COMMANDS
 
 npm run dev — Start development server (port 3000)
 npm run generate-routes — Regenerate TanStack Router route tree
-npm run db:generate — Regenerate Prisma client
-npm run db:migrate — Create and apply database migration
-npm run db:push — Push schema directly to database
+npm run db:generate — Generate Drizzle migrations (drizzle-kit generate)
+npm run db:migrate — Apply Drizzle migrations
+npm run db:push — Push Drizzle schema directly to database
 npm run build — Production build
 npm run lint / npm run check — Run linter and typecheck

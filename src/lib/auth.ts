@@ -1,16 +1,16 @@
-import { prismaAdapter } from 'better-auth/adapters/prisma'
+import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { betterAuth } from 'better-auth'
 import { magicLink } from 'better-auth/plugins'
 import { tanstackStartCookies } from 'better-auth/tanstack-start'
-import { prisma } from '#/db'
+import { db } from '#/db'
 import { env } from '#/env'
 
 export const auth = betterAuth({
   baseURL: env.BETTER_AUTH_URL,
   // secret: env.BETTER_AUTH_SECRET,
   secret: env.BETTER_AUTH_SECRET || 'd3v-s3cr3t-k3y-32-byt3s-long-secret!',
-  database: prismaAdapter(prisma, {
-    provider: 'postgresql',
+  database: drizzleAdapter(db, {
+    provider: 'pg',
   }),
   socialProviders: {
     google: {
