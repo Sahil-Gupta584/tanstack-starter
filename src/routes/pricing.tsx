@@ -4,7 +4,7 @@ import { Badge as Chip } from '#/components/ui/badge'
 import { Spinner } from '#/components/ui/spinner'
 import { useQuery } from '@tanstack/react-query'
 import { orpc } from '#/orpc/client'
-import { Button } from '#/components/Button'
+import { Button } from '#/components/ui/button'
 
 export const Route = createFileRoute('/pricing')({
   component: PricingPage,

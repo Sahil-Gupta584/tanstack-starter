@@ -10,7 +10,7 @@ Server API: oRPC with Zod validation (/api/rpc/* for RPC, /api/* for OpenAPI)
 Database: Prisma 7 with @prisma/adapter-pg against PostgreSQL. Client at src/generated/prisma.
 Auth: better-auth (magic link + Google OAuth). Client instance: #/lib/auth-client.
 Payments: Dodo Payments (hosted checkout redirect + webhook signature verification).
-UI & Styling: HeroUI (@heroui/react) + Tailwind CSS v4. Icons: react-icons/ri.
+UI & Styling: shadcn/ui (Radix primitives) + Tailwind CSS v4. Icons: react-icons/ri.
 Forms: react-hook-form + @hookform/resolvers/zod.
 
 IMPORT ALIASES
@@ -26,7 +26,7 @@ AGENT INSTRUCTIONS & KEY CONVENTIONS
 2. Auth in protected routes: Under _protected pages, do NOT call authClient.useSession() or getSession(). The user object is already provided in the page context by _protected.tsx. Access it via const { user } = Route.useRouteContext().
 3. Forms: Any time a feature uses more than 2 input fields, always use react-hook-form with a proper Zod schema resolver (@hookform/resolvers/zod). Place the Zod schema at the top of the component file and infer the TypeScript type using z.infer<typeof schema>.
 4. Env variables: Import env from '#/env' — never use process.env directly.
-5. UI Components: Check src/components/ first for wrappers (e.g. Button, Input, Select). If none exists, import directly from @heroui/react.
+5. UI Components: All primitives live in src/components/ui/ (shadcn/ui). Import from '#/components/ui/*' — e.g. `import { Button } from '#/components/ui/button'`. Thin re-exports at src/components/Button.tsx etc. exist for backward compat only.
 6. Route file modularization: Keep route files focused and concise. Do not overcrowd a single route file by declaring multiple sub-components inline. If a route file exceeds ~500 lines, convert it to a folder (e.g. rename dashboard.tsx to dashboard/index.tsx) and extract page-specific sub-components or utilities into a local subfolder (e.g. dashboard/-components/button.tsx).
 
 COMMANDS

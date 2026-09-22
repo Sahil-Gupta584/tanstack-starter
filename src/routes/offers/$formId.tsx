@@ -3,9 +3,9 @@ import { Card } from '#/components/ui/card'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
 import { orpc } from '#/orpc/client'
-import { Button } from '#/components/Button'
-import { Input } from '#/components/Input'
-import { Select, SelectItem } from '#/components/Select'
+import { Button } from '#/components/ui/button'
+import { Input } from '#/components/ui/input'
+import { Select, SelectItem } from '#/components/ui/select'
 
 export const Route = createFileRoute('/offers/$formId')({
   component: OfferFormPage,

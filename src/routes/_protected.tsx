@@ -5,6 +5,7 @@ import {
   useRouter,
 } from '@tanstack/react-router'
 import { Avatar } from '#/components/ui/avatar'
+import { Button } from '#/components/ui/button'
 import { Dropdown } from '#/components/ui/dropdown-menu'
 import {
   RiDashboardLine,
@@ -64,8 +65,11 @@ function ProtectedLayout() {
 
           <div className="flex items-center gap-4">
             <Dropdown>
-              <Dropdown.Trigger>
-                <button className="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 transition hover:bg-gray-100 focus:outline-none">
+              <Dropdown.Trigger asChild>
+                <Button
+                  variant="ghost"
+                  className="flex h-auto items-center gap-2.5 rounded-lg px-2 py-1.5 hover:bg-gray-100 focus-visible:ring-0"
+                >
                   <Avatar size="sm">
                     {user?.image && (
                       <Avatar.Image src={user.image} alt={displayName} />
@@ -86,7 +90,7 @@ function ProtectedLayout() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </button>
+                </Button>
               </Dropdown.Trigger>
 
               <Dropdown.Popover>

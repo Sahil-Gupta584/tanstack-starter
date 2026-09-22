@@ -3,7 +3,7 @@ import { Card } from '#/components/ui/card'
 import { Badge as Chip } from '#/components/ui/badge'
 import { useQuery } from '@tanstack/react-query'
 import { orpc } from '#/orpc/client'
-import { Button } from '#/components/Button'
+import { Button } from '#/components/ui/button'
 import { RiArrowLeftLine } from 'react-icons/ri'
 
 export const Route = createFileRoute('/_protected/forms/$formId/responses')({

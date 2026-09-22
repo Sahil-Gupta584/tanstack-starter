@@ -8,8 +8,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { orpc } from '#/orpc/client'
-import { Input } from '#/components/Input'
-import { Button } from '#/components/Button'
+import { Input } from '#/components/ui/input'
+import { Button } from '#/components/ui/button'
 import {
   RiAddLine,
   RiDeleteBinLine,
@@ -188,10 +188,14 @@ function FormDetailsPage() {
                   {gift.name}
                 </Card.Title>
                 <Tooltip>
-                  <Tooltip.Trigger>
-                    <button className="text-gray-400 hover:text-gray-600">
+                  <Tooltip.Trigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 text-gray-400 hover:text-gray-600"
+                    >
                       <RiInformationLine />
-                    </button>
+                    </Button>
                   </Tooltip.Trigger>
                   <Tooltip.Content className="text-xs p-2">
                     Gift ID: {gift.id}
