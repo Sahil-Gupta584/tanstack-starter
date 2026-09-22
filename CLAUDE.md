@@ -7,7 +7,7 @@ TECH STACK
 Framework: TanStack Start (Vite + React 19)
 Router: TanStack Router (file-based at src/routes/). Never edit src/routeTree.gen.ts manually. Run npm run generate-routes after adding/renaming routes.
 Server API: oRPC with Zod validation (/api/rpc/* for RPC, /api/* for OpenAPI)
-Database: Drizzle ORM + pg (PostgreSQL) with drizzle-kit. Schema at src/db/schema.ts. Client `db` at src/db.ts (re-exports `prisma` legacy until migration done).
+Database: Drizzle ORM + pg (PostgreSQL) with drizzle-kit. Schema at src/db/schema.ts. Client `db` at src/db.ts.
 Auth: better-auth (magic link + Google OAuth). Client instance: #/lib/auth-client.
 Payments: Dodo Payments (hosted checkout redirect + webhook signature verification).
 UI & Styling: shadcn/ui (Radix primitives) + Tailwind CSS v4. Icons: react-icons/ri.

@@ -5,11 +5,7 @@
   "packageManager": "npm",
   "includeExamples": false,
   "tailwind": true,
-  "addOnOptions": {
-    "prisma": {
-      "database": "postgres"
-    }
-  },
+  "addOnOptions": {},
   "envVarValues": {},
   "git": false,
   "install": true,
@@ -19,7 +15,7 @@
   "chosenAddOns": [
     "eslint",
     "sentry",
-    "prisma",
+    "drizzle",
     "oRPC",
     "t3env",
     "better-auth",

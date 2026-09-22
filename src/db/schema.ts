@@ -3,16 +3,14 @@ import { relations } from 'drizzle-orm'
 import {
   boolean,
   index,
-  jsonb,
   pgEnum,
   pgTable,
   text,
   timestamp,
   integer,
-  varchar,
 } from 'drizzle-orm/pg-core'
 
-// keep unified - single source for all tables, mirrors prisma/schema.prisma
+// keep unified - single source for all tables
 
 export const subscriptionStatusEnum = pgEnum('SubscriptionStatus', [
   'active',
@@ -109,36 +107,6 @@ export const subscription = pgTable(
   (t) => [index('subscription_userId_idx').on(t.userId)],
 )
 
-export const form = pgTable(
-  'form',
-  {
-    id: text('id').primaryKey().$defaultFn(() => createId()),
-    title: text('title').notNull(),
-    description: text('description'),
-    preset: text('preset').notNull().default('amazon'),
-    fields: jsonb('fields').notNull(),
-    userId: text('userId')
-      .notNull()
-      .references(() => user.id, { onDelete: 'cascade' }),
-    createdAt: timestamp('createdAt').notNull().defaultNow(),
-    updatedAt: timestamp('updatedAt').notNull().defaultNow().$onUpdate(() => new Date()),
-  },
-  (t) => [index('form_userId_idx').on(t.userId)],
-)
-
-export const formSubmission = pgTable(
-  'form_submission',
-  {
-    id: text('id').primaryKey().$defaultFn(() => createId()),
-    formId: text('formId')
-      .notNull()
-      .references(() => form.id, { onDelete: 'cascade' }),
-    data: jsonb('data').notNull(),
-    createdAt: timestamp('createdAt').notNull().defaultNow(),
-  },
-  (t) => [index('form_submission_formId_idx').on(t.formId)],
-)
-
 export const todo = pgTable('Todo', {
   id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
   title: text('title').notNull(),
@@ -150,7 +118,6 @@ export const userRelations = relations(user, ({ many }) => ({
   sessions: many(session),
   accounts: many(account),
   subscriptions: many(subscription),
-  forms: many(form),
 }))
 
 export const sessionRelations = relations(session, ({ one }) => ({
@@ -163,13 +130,4 @@ export const accountRelations = relations(account, ({ one }) => ({
 
 export const subscriptionRelations = relations(subscription, ({ one }) => ({
   user: one(user, { fields: [subscription.userId], references: [user.id] }),
-}))
-
-export const formRelations = relations(form, ({ one, many }) => ({
-  user: one(user, { fields: [form.userId], references: [user.id] }),
-  submissions: many(formSubmission),
-}))
-
-export const formSubmissionRelations = relations(formSubmission, ({ one }) => ({
-  form: one(form, { fields: [formSubmission.formId], references: [form.id] }),
 }))
