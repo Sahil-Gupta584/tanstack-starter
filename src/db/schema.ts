@@ -19,19 +19,15 @@ export const subscriptionStatusEnum = pgEnum('SubscriptionStatus', [
   'on_hold',
 ])
 
-export const user = pgTable(
-  'user',
-  {
-    id: text('id').primaryKey().$defaultFn(() => createId()),
-    name: text('name').notNull(),
-    email: text('email').notNull().unique(),
-    emailVerified: boolean('emailVerified').notNull().default(false),
-    image: text('image'),
-    createdAt: timestamp('createdAt').notNull().defaultNow(),
-    updatedAt: timestamp('updatedAt').notNull().defaultNow().$onUpdate(() => new Date()),
-  },
-  (t) => [],
-)
+export const user = pgTable('user', {
+  id: text('id').primaryKey().$defaultFn(() => createId()),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  emailVerified: boolean('emailVerified').notNull().default(false),
+  image: text('image'),
+  createdAt: timestamp('createdAt').notNull().defaultNow(),
+  updatedAt: timestamp('updatedAt').notNull().defaultNow().$onUpdate(() => new Date()),
+})
 
 export const session = pgTable(
   'session',

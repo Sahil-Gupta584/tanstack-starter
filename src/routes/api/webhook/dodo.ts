@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { prisma } from '#/db'
+import { db, subscription } from '#/db'
 import { dodo } from '#/lib/payments/dodo'
+import { eq } from 'drizzle-orm'
 import type { UnwrapWebhookEvent } from 'dodopayments/resources/webhooks'
 
 async function handle({ request }: { request: Request }) {
@@ -39,39 +40,36 @@ async function handle({ request }: { request: Request }) {
         const interval = String(sub.metadata?.interval ?? 'monthly')
 
         // Upsert subscription
-        const existing = await prisma.subscription.findUnique({
-          where: { dodoSubscriptionId: sub.subscription_id },
-        })
+        const existingRows = await db
+          .select()
+          .from(subscription)
+          .where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
+          .limit(1)
+        const existing = existingRows[0]
 
         if (existing) {
-          await prisma.subscription.update({
-            where: { id: existing.id },
-            data: {
+          await db
+            .update(subscription)
+            .set({
               status: 'active',
               planId,
               billingInterval: interval,
               productId: sub.product_id,
-              currentPeriodEnd: sub.next_billing_date
-                ? new Date(sub.next_billing_date)
-                : null,
+              currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
               cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
-            },
-          })
+            })
+            .where(eq(subscription.id, existing.id))
         } else {
-          await prisma.subscription.create({
-            data: {
-              userId,
-              dodoSubscriptionId: sub.subscription_id,
-              dodoCustomerId: sub.customer?.customer_id ?? null,
-              productId: sub.product_id,
-              status: 'active',
-              planId,
-              billingInterval: interval,
-              currentPeriodEnd: sub.next_billing_date
-                ? new Date(sub.next_billing_date)
-                : null,
-              cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
-            },
+          await db.insert(subscription).values({
+            userId,
+            dodoSubscriptionId: sub.subscription_id,
+            dodoCustomerId: sub.customer?.customer_id ?? null,
+            productId: sub.product_id,
+            status: 'active',
+            planId,
+            billingInterval: interval,
+            currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+            cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
           })
         }
         break
@@ -79,16 +77,14 @@ async function handle({ request }: { request: Request }) {
 
       case 'subscription.renewed': {
         const sub = event.data
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: {
+        await db
+          .update(subscription)
+          .set({
             status: 'active',
-            currentPeriodEnd: sub.next_billing_date
-              ? new Date(sub.next_billing_date)
-              : null,
+            currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
             cancelAtNextBilling: sub.cancel_at_next_billing_date ?? false,
-          },
-        })
+          })
+          .where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 
@@ -96,54 +92,43 @@ async function handle({ request }: { request: Request }) {
         const sub = event.data
         const planId = String(sub.metadata?.planId ?? 'starter')
         const interval = String(sub.metadata?.interval ?? 'monthly')
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: {
+        await db
+          .update(subscription)
+          .set({
             status: 'active',
             planId,
             billingInterval: interval,
             productId: sub.product_id,
-            currentPeriodEnd: sub.next_billing_date
-              ? new Date(sub.next_billing_date)
-              : null,
-          },
-        })
+            currentPeriodEnd: sub.next_billing_date ? new Date(sub.next_billing_date) : null,
+          })
+          .where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 
       case 'subscription.cancelled': {
         const sub = event.data
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: { status: 'cancelled', cancelAtNextBilling: true },
-        })
+        await db
+          .update(subscription)
+          .set({ status: 'cancelled', cancelAtNextBilling: true })
+          .where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 
       case 'subscription.expired': {
         const sub = event.data
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: { status: 'expired' },
-        })
+        await db.update(subscription).set({ status: 'expired' }).where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 
       case 'subscription.on_hold': {
         const sub = event.data
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: { status: 'on_hold' },
-        })
+        await db.update(subscription).set({ status: 'on_hold' }).where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 
       case 'subscription.failed': {
         const sub = event.data
-        await prisma.subscription.updateMany({
-          where: { dodoSubscriptionId: sub.subscription_id },
-          data: { status: 'on_hold' },
-        })
+        await db.update(subscription).set({ status: 'on_hold' }).where(eq(subscription.dodoSubscriptionId, sub.subscription_id))
         break
       }
 

@@ -15,7 +15,7 @@ function PricingPage() {
     orpc.billing.getSubscription.queryOptions(),
   )
 
-  const isPro = subscription?.status === 'ACTIVE'
+  const isPro = subscription?.status === 'active'
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">

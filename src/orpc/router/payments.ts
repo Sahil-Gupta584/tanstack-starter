@@ -1,21 +1,21 @@
 import { z } from 'zod'
-import { prisma } from '#/db'
+import { db, subscription } from '#/db'
 import { authed, base } from '#/orpc/middleware'
-import type { BillingInterval, PlanId } from '#/lib/payments/plans'
+import { and, desc, eq, inArray } from 'drizzle-orm'
 import { dodo, getDodoProductId } from '#/lib/payments/dodo'
 import { PLANS } from '#/lib/payments/plans'
 import { env } from '#/env'
 
 // Get current subscription for the user
-export const getSubscription = authed
-  .input(z.void())
-  .handler(async ({ context }) => {
-    const sub = await prisma.subscription.findFirst({
-      where: { userId: context.user.id, status: { in: ['active', 'on_hold'] } },
-      orderBy: { createdAt: 'desc' },
-    })
-    return sub ?? null
-  })
+export const getSubscription = authed.input(z.void()).handler(async ({ context }) => {
+  const rows = await db
+    .select()
+    .from(subscription)
+    .where(and(eq(subscription.userId, context.user.id), inArray(subscription.status, ['active', 'on_hold'] as const)))
+    .orderBy(desc(subscription.createdAt))
+    .limit(1)
+  return rows[0] ?? null
+})
 
 // Get all plans (for pricing display — no product IDs needed client-side)
 export const getPlans = base.input(z.void()).handler(async () => {
@@ -74,45 +74,44 @@ export const createCheckout = authed
   })
 
 // Cancel the active subscription at period end
-export const cancelSubscription = authed
-  .input(z.void())
-  .handler(async ({ context }) => {
-    const sub = await prisma.subscription.findFirst({
-      where: { userId: context.user.id, status: { in: ['active', 'on_hold'] } },
-      orderBy: { createdAt: 'desc' },
-    })
-    if (!sub) throw new Error('No active subscription')
+export const cancelSubscription = authed.input(z.void()).handler(async ({ context }) => {
+  const rows = await db
+    .select()
+    .from(subscription)
+    .where(and(eq(subscription.userId, context.user.id), inArray(subscription.status, ['active', 'on_hold'] as const)))
+    .orderBy(desc(subscription.createdAt))
+    .limit(1)
+  const sub = rows[0]
+  if (!sub) throw new Error('No active subscription')
 
-    await dodo.subscriptions.update(sub.dodoSubscriptionId, {
-      cancel_at_next_billing_date: true,
-    })
-
-    await prisma.subscription.update({
-      where: { id: sub.id },
-      data: { cancelAtNextBilling: true },
-    })
-
-    return { success: true }
+  await dodo.subscriptions.update(sub.dodoSubscriptionId, {
+    cancel_at_next_billing_date: true,
   })
+
+  await db.update(subscription).set({ cancelAtNextBilling: true }).where(eq(subscription.id, sub.id))
+
+  return { success: true }
+})
 
 // Resume (un-cancel) the subscription
-export const resumeSubscription = authed
-  .input(z.void())
-  .handler(async ({ context }) => {
-    const sub = await prisma.subscription.findFirst({
-      where: { userId: context.user.id, status: 'active' },
-      orderBy: { createdAt: 'desc' },
-    })
-    if (!sub) throw new Error('No active subscription')
+export const resumeSubscription = authed.input(z.void()).handler(async ({ context }) => {
+  const rows = await db
+    .select()
+    .from(subscription)
+    .where(and(eq(subscription.userId, context.user.id), eq(subscription.status, 'active')))
+    .orderBy(desc(subscription.createdAt))
+    .limit(1)
+  const sub = rows[0]
+  if (!sub) throw new Error('No active subscription')
 
-    await dodo.subscriptions.update(sub.dodoSubscriptionId, {
-      cancel_at_next_billing_date: false,
-    })
-
-    await prisma.subscription.update({
-      where: { id: sub.id },
-      data: { cancelAtNextBilling: false, status: 'active' },
-    })
-
-    return { success: true }
+  await dodo.subscriptions.update(sub.dodoSubscriptionId, {
+    cancel_at_next_billing_date: false,
   })
+
+  await db
+    .update(subscription)
+    .set({ cancelAtNextBilling: false, status: 'active' })
+    .where(eq(subscription.id, sub.id))
+
+  return { success: true }
+})
