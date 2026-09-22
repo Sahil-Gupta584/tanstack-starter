@@ -10,7 +10,6 @@
     "generate-routes": "tsr generate",
     "post-cta-init": "npx -y create-db@latest --user-agent tanstack/tsrouter",
     "db:generate": "dotenv -e .env -- drizzle-kit generate",
-    "db:push": "dotenv -e .env -- drizzle-kit push",
     "db:migrate": "dotenv -e .env -- drizzle-kit migrate",
     "db:studio": "dotenv -e .env -- drizzle-kit studio",
     "lint": "eslint",

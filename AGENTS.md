@@ -7,8 +7,8 @@ TECH STACK
 Framework: TanStack Start (Vite + React 19)
 Router: TanStack Router (file-based at src/routes/). Never edit src/routeTree.gen.ts manually. Run npm run generate-routes after adding/renaming routes.
 Server API: oRPC with Zod validation (/api/rpc/* for RPC, /api/* for OpenAPI)
-Database: Drizzle ORM + pg (PostgreSQL) with drizzle-kit. Schema at src/db/schema.ts. Client `db` at src/db.ts.
-Auth: better-auth (magic link + Google OAuth). Client instance: #/lib/auth-client.
+Database: Drizzle ORM + pg (PostgreSQL) with drizzle-kit. Schema at src/db/schema.ts (dynamic `pgSchema(getSchemaName())` reading `?schema=` from `DATABASE_URL` like Prisma did). Client `db` at src/db.ts (Pool `search_path` set from URL). Prisma removed.
+Auth: better-auth (magic link + Google OAuth) via `drizzleAdapter(db, {provider:'pg'})`. Client instance: #/lib/auth-client.
 Payments: Dodo Payments (hosted checkout redirect + webhook signature verification).
 UI & Styling: shadcn/ui (Radix primitives) + Tailwind CSS v4. Icons: react-icons/ri.
 Forms: react-hook-form + @hookform/resolvers/zod.
@@ -29,12 +29,14 @@ AGENT INSTRUCTIONS & KEY CONVENTIONS
 5. UI Components: All primitives live in src/components/ui/ (shadcn/ui). Import from '#/components/ui/*' — e.g. `import { Button } from '#/components/ui/button'`. Thin re-exports at src/components/Button.tsx etc. exist for backward compat only.
 6. Route file modularization: Keep route files focused and concise. Do not overcrowd a single route file by declaring multiple sub-components inline. If a route file exceeds ~500 lines, convert it to a folder (e.g. rename dashboard.tsx to dashboard/index.tsx) and extract page-specific sub-components or utilities into a local subfolder (e.g. dashboard/-components/button.tsx).
 
-COMMANDS
+COMMANDS — ask before running any DB migration (never auto-push):
 
 npm run dev — Start development server (port 3000)
 npm run generate-routes — Regenerate TanStack Router route tree
-npm run db:generate — Generate Drizzle migrations (drizzle-kit generate)
-npm run db:migrate — Apply Drizzle migrations
-npm run db:push — Push Drizzle schema directly to database
+npm run db:generate — Generate Drizzle migrations (drizzle-kit generate) — ask first
+npm run db:migrate — Apply Drizzle migrations (drizzle-kit migrate) — ask first
+# db:push is prohibited — use migrate only
 npm run build — Production build
 npm run lint / npm run check — Run linter and typecheck
+
+NOTES: seed removed, form tables/routes removed (no `src/lib/forms.ts`, `offers/$formId`, `forms/$formId`), dashboard is placeholder.

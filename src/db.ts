@@ -1,9 +1,14 @@
 import { drizzle } from 'drizzle-orm/node-postgres'
 import { Pool } from 'pg'
 import * as schema from './db/schema.js'
+import { getSchemaName } from './db/schema.js'
+
+const dbSchema = getSchemaName()
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  // honor ?schema= param like Prisma did (src/db.ts previously used PrismaPg adapter schema)
+  ...(dbSchema !== 'public' ? { options: `-c search_path=${dbSchema}` } : {}),
 })
 
 declare global {
