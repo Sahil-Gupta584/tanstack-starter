@@ -31,12 +31,12 @@ AGENT INSTRUCTIONS & KEY CONVENTIONS
 
 COMMANDS — ask before running any DB migration (never auto-push):
 
-npm run dev — Start development server (port 3000)
 npm run generate-routes — Regenerate TanStack Router route tree
 npm run db:generate — Generate Drizzle migrations (drizzle-kit generate) — ask first
 npm run db:migrate — Apply Drizzle migrations (drizzle-kit migrate) — ask first
+-never run dev server yourself
+-only typecheck , not build for every changes you make
+
 # db:push is prohibited — use migrate only
 npm run build — Production build
 npm run lint / npm run check — Run linter and typecheck
-
-NOTES: seed removed, form tables/routes removed (no `src/lib/forms.ts`, `offers/$formId`, `forms/$formId`), dashboard is placeholder.
