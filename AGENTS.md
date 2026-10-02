@@ -35,7 +35,9 @@ npm run generate-routes — Regenerate TanStack Router route tree
 npm run db:generate — Generate Drizzle migrations (drizzle-kit generate) — ask first
 npm run db:migrate — Apply Drizzle migrations (drizzle-kit migrate) — ask first
 -never run dev server yourself
--only typecheck , not build for every changes you make
+-never run build; use typecheck (`npx tsc --noEmit`) to verify
+-do NOT run typecheck for small changes (copy, styling, one-off JSX tweaks) — it is slow and the user finds the wait irritating. Only typecheck when the change touches types, routes, server code, or spans several files.
+-prefer answering first and editing directly; don't ask permission for routine edits
 
 # db:push is prohibited — use migrate only
 npm run build — Production build
